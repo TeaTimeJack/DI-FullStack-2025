@@ -1,0 +1,35 @@
+.container{
+   
+}
+.head{
+    display: block;
+    background-color: blueviolet;
+    position: relative;
+    height: 120px;
+    border: solid 5px black;
+    margin-bottom: 20px;
+}
+.contant, .contantIMG {
+    display: flex;
+    justify-content:space-between;
+    align-items: stretch;
+    height: 200px; 
+    margin-bottom: 20px;
+}
+img{
+    width: 250px;
+    border: solid 5px black;
+}
+.d1,.d2,.d3{
+    width: 250px;
+    border: solid 5px black;
+}
+.d1{
+    background-color: red;
+}
+.d2{
+    background-color: green;
+}
+.d3{
+background-color: orange;
+}

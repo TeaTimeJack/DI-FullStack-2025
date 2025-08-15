@@ -1,0 +1,19 @@
+#wrap{
+    background-color: aqua;
+    margin: 10px;
+    padding: 5px;
+    font-size: large;
+}
+ul{
+    text-align: center;
+    list-style-type: none;
+}
+
+li{
+    margin-bottom: 5px;
+    
+}
+li::first-letter{
+    font-weight: bolder;
+    font-size: larger;
+}

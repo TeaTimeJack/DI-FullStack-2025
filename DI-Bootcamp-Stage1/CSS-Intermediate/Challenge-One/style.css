@@ -1,0 +1,23 @@
+body{
+    background-color: rgba(25, 25, 163, 0.548);
+    text-align: center;
+}
+#wrap{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+
+}
+#nav{
+    width: 300px;
+    padding: 5px;
+    background-color: aqua;
+    
+}
+#content{
+    background-color: blueviolet;
+    text-align: center;
+}
+#content ul{
+    list-style-type: none;
+}

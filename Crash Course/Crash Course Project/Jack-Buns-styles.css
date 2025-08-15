@@ -1,0 +1,50 @@
+.inline{
+    display: inline;
+    
+}
+.fixed{
+    position: fixed;
+    z-index: 50;
+}
+.fa {
+
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  width: fit-content;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+.zindex{
+  z-index: 100;
+}
+nav a.sidenav-trigger{
+  display: flex;
+}
+.background{
+  opacity: 0.3;
+}
+.caption{
+  font-weight: bolder;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-shadow: 1px 1px 2px black ;
+}
+.shadowBun{
+  font-weight: bolder;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   text-shadow: 1px 1px 2px rgb(255, 255, 255) ;
+}

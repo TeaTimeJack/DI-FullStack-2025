@@ -1,0 +1,10 @@
+nav{
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+}
+.ul-nav{
+    display: inline-flex;
+    flex-direction: row;
+    
+}
