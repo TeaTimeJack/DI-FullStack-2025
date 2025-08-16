@@ -1,0 +1,48 @@
+body{
+    background-color: beige;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+header{
+    position: sticky;
+    top: 0;
+}
+.nav{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    background-color: rgb(0, 255, 157);
+}
+.a-nav{
+    text-decoration: none;
+}
+.left-year, .center-contant, .right-img{
+    display: inline-block;
+}
+td img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+.summery{
+    font-size: larger;
+}
+section{
+    text-align: center;
+}
+.img-item img{
+    position: relative;
+    
+    height: 100px;
+    width: 90px;
+}
+.img-item a{
+    text-decoration: none;
+}
+.container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.img-item{
+    margin: 5px;
+}
