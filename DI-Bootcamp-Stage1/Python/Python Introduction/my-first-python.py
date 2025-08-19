@@ -59,7 +59,7 @@ elif age >= 13:
 name = "Matt"
 if name == "Matt":
     print("Your name is Matt")
-elif name == John:
+elif name == "John":
     print("Your name is John")
 print("Bye!")
 
