@@ -13,7 +13,7 @@ print(word_dict)
 #Challenge 2: Affordable Items
 
 items_purchase = {"Water": "$1", "Bread": "$3", "TV": "$1,000", "Fertilizer": "$20"}
-wallet = "0"
+wallet = "$300"
 
 #2. Data Cleaning:
 clean_items_purchase = {}
