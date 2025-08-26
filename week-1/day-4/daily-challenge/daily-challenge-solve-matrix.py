@@ -47,7 +47,7 @@ def iterate_columns(arg):
     return column_text    
 
 #Step 3: Filtering Alpha Characters + Step 4: Replacing Symbols with Spaces
-def filter_alpha(arg):
+def filter_alpha(arg: list) ->str:
     temp_string = ''
     sign_counter = 0
     for item in arg:
