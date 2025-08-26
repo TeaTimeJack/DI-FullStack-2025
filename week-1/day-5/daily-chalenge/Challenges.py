@@ -9,18 +9,17 @@ splited_input = user_input.split(",")
 #Step 3: Sort the List
 splited_input.sort()
 #Step 4: Join the Sorted List
-sorted_string=""
-for word in splited_input:
-    if sorted_string == "":
-        sorted_string+=word
-    else: sorted_string+=","+word
+        # sorted_string=""
+        # for word in splited_input:
+        #     if sorted_string == "":
+        #         sorted_string+=word
+        #     else: sorted_string+=","+word
+sorted_string = ",".join(splited_input)
 #Step 5: Print the Result
 print(sorted_string)
 
 # Expected Output:
 # If the input is 'without,hello,bag,world', the output should be 'bag,hello,without,world'.
-
-
 
 #Challenge 2: Longest Word
 #Step 1: Define the Function
