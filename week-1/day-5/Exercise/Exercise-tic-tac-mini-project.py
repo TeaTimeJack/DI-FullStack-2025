@@ -89,14 +89,6 @@ def check_win(board, player):
     else:
         return player_won
 
-def clean_board():
-    board = [
-    [" ", " ", " "],
-    [" ", " ", " "],
-    [" ", " ", " "]
-    ]
-    return board
-
 
 def play(board):
     my_board = board
@@ -131,6 +123,7 @@ def play(board):
             break 
         elif(again_input == "y" or again_input == "Y"):
             play(clean_board())
+            break
         else:
             print("Invalide answer")
 
