@@ -1,111 +1,114 @@
-#Exercise 1: Converting Lists into Dictionaries
-keys = ['Ten', 'Twenty', 'Thirty']
-values = [10, 20, 30]
-
-expected_output = {}
-for i in range(len(keys)):
-    expected_output[keys[i]] = values[i]
-print(expected_output)
-
-#Or #Exercise 1: Converting Lists into Dictionaries
-expected_output_2 = dict(zip(keys, values))
-print(expected_output_2)
 
 
-#Exercise 2: Cinemax #2
-family = {"rick": 43, 
-          'beth': 13, 
-          'morty': 5, 
-          'summer': 8}
-total_price = 0
-for name,age in family.items():
-    if age >= 3 and age <=12:
-        print(f"{name}`s price is $10")
-        total_price += 10
-    elif age > 12:
-        print(f"{name}`s price is $15")
-        total_price += 15
-    else:
-        print(f"{name}`s price is Free!")
-print(f"${total_price}")
-
-#Exercise 2: Cinemax #2 BONUS
-
-family_input_dict = {}
-while True:
-    family_input_name = input("type a name: if your done type 'q'")
-    if family_input_name == 'q':
-        break
-    family_input_age = input("type the age of that name: ")
-    family_input_dict[family_input_name] = int(family_input_age)
-
-print(family_input_dict)
-
-total_price_bonus = 0
-for name,age in family_input_dict.items():
-    if age >= 3 and age <=12:
-        print(f"{name}`s price is $10")
-        total_price_bonus += 10
-    elif age > 12:
-        print(f"{name}`s price is $15")
-        total_price_bonus += 15
-    else:
-        print(f"{name}`s price is Free!")
-print(f"${total_price_bonus}")
+import string
+import random
+import datetime
+import math
+from faker import Faker
 
 
-#Exercise 3: Zara
+#Exercise 1: Currencies
 
-brand = {
-    "name": "Zara",
-    "creation_date": 1975,
-    "creator_name": "Amancio Ortega Gaona",
-    "type_of_clothes": ["men", "women", "children", "home"],
-    "international_competitors": ["Gap", "H&M", "Benetton"],
-    "number_stores": 7000,
-    "major_color": {
-        "France": "blue", 
-        "Spain": "red", 
-        "US": ["pink", "green"]
-    }    
-}
+class Currency:
+    def __init__(self, currency, amount):
+        self.currency = currency
+        self.amount = amount
 
-brand["number_stores"] = 2
-client = brand["type_of_clothes"]
-print(f"{brand['name']} clients are {client[0]}, {client[1]}, {client[2]}, and {client[3]}.")
-brand["country_creation"] = "Spain"
-if brand["international_competitors"]:
-    brand["international_competitors"].append("Desigual")
-del brand["creation_date"]    
-print(brand["international_competitors"][-1])
-print(brand["major_color"]["US"])
-print(len(brand))
-print(brand.keys())
+    #Your code starts HERE
+    def __str__(self):
+        return f"{self.amount} {self.currency}"
+    def __int__(self):
+        return int(self.amount)
+    def __repr__(self):
+        return f"{self.__dict__}"
+    def __add__(self, other):
+            if type(other) == int:
+                temp = self.amount + other
+                return temp
+            else: 
+                if self.currency == other.currency:
+                    temp = self.__int__()+ other.amount.__int__()
+                    return temp
+                else:
+                    print( TypeError(f"Cannot add between Currency type {self.currency} and {other.currency}"))
+    def __iadd__(self, other):
+        if type(other) == int:
+            temp = self.__add__(other)
+            self.amount = temp
+            return self.__int__()
+        else: 
+            temp = self.amount + other.amount
+            self.amount = temp
 
-#Bonus:
-more_on_zara = {
-    "creation_date" : 1975,
-    "number_stores": 7002
-}
-brand.update(more_on_zara)
-print(brand)
+c1 = Currency('dollar', 5)
+c2 = Currency('dollar', 10)
+c3 = Currency('shekel', 1)
+c4 = Currency('shekel', 10)
 
-#Exercise 4: Disney Characters
+# #the comment is the expected output
+# print(c1)
+# # '5 dollars'
+# print(int(c1))
+# # 5
+# print(repr(c1))
+# # '5 dollars'
+# print(c1 + 5)
+# # 10
+# print(c1 + c2)
+# # 15
+# print(c1) 
+# # 5 dollars
+# c1 += 5
+# print(c1)
+# # 10 dollars
+# c1 += c2
+# print(c1)
+# # 20 dollars
+# print(c1 + c3)
+# # TypeError: Cannot add between Currency type <dollar> and <shekel>
 
-users = ["Mickey", "Minnie", "Donald", "Ariel", "Pluto"]
 
-users_dict_1 = {}
-for name in enumerate(users):
-    users_dict_1[name[1]] = name[0]
-print (users_dict_1)
 
-users_dict_2 = {}
-for name in enumerate(users):
-    users_dict_2[name[0]] = name[1]
-print (users_dict_2)
+## Exercise 3: String module
 
-users.sort()
-users_dict_3 = {}
-for name in enumerate(users):
-    users_dict_3[name[1]] = name[0]
-print (users_dict_3)
+all_letters = string.ascii_lowercase
+random_string =""
+lenght_rnd_string = 5
+for i in range(lenght_rnd_string):
+    index = random.randint(0,len(all_letters))
+    letter = all_letters[index]
+    random_string += letter
+print(random_string)
+
+##Exercise 4: Current Date
+today = datetime.date.today()
+print(today)
+
+#Exercise 5: Amount of time left until January 1st
+the_start_of_year = datetime.date(today.year+1,1,1)
+days_till_start = 365 - int(today.strftime('%j'))
+print(days_till_start)
+
+##Exercise 6: Birthday and minutes
+
+def miniuts_alive(year, month, day):
+    user_birthday = datetime.datetime(year, month, day)
+    today = datetime.datetime.today()
+    time_diff = today - user_birthday
+    print(math.floor(time_diff.total_seconds()/60))
+miniuts_alive(1990,9,24)
+
+##Exercise 7: Faker Module
+
+user_list = []
+def add_users(num):
+    for i in range(num):
+        fake = Faker()
+        user_dict = {}
+        user_dict["name"] = fake.name()
+        user_dict["address"] = fake.address()
+        user_dict["language_code"] = fake.language_code()
+        user_list.append(user_dict)
+
+add_users(2)
+print(user_list)

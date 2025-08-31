@@ -24,6 +24,8 @@ class Pagination:
     #     return visible_items
     
     def get_visible_items(self):
+        visible_items = self.items[self.current_idx*self.page_size:self.current_idx*self.page_size+self.page_size]
+        print(visible_items)
         return self.items[self.current_idx*self.page_size:self.current_idx*self.page_size+self.page_size]
 
 # Step 4: Implement Navigation Methods
@@ -61,17 +63,17 @@ class Pagination:
 
 alphabetList = list("abcdefghijklmnopqrstuvwxyz")
 p = Pagination(alphabetList, 4)
-p.string_it()
+# p.string_it()
+print(p.next_page().next_page().next_page().get_visible_items())
+# print(p.get_visible_items())
 
-print(p.get_visible_items())
+# p.next_page()
+# print(p.get_visible_items())
 
-p.next_page()
-print(p.get_visible_items())
+# p.last_page()
+# print(p.get_visible_items())
 
-p.last_page()
-print(p.get_visible_items())
+# p.go_to_page(10)
+# print(p.current_idx + 1)
 
-p.go_to_page(10)
-print(p.current_idx + 1)
-
-p.go_to_page(0)
+# p.go_to_page(0)
