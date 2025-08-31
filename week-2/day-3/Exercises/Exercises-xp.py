@@ -37,13 +37,12 @@ class Currency:
 
     def __iadd__(self, other):
         if type(other) == int:
-            temp = self.amount + other
-            self.amount = temp
-            return self.amount
+            self.amount += other
+            return self
         else: 
             temp = self.amount + other.amount
             self.amount = temp
-            return self.amount
+            return self
 
 c1 = Currency('dollar', 5)
 c2 = Currency('dollar', 10)
@@ -74,46 +73,46 @@ print(c1 + c3)
 
 
 
-# ## Exercise 3: String module
+## Exercise 3: String module
 
-# all_letters = string.ascii_lowercase
-# random_string =""
-# lenght_rnd_string = 5
-# for i in range(lenght_rnd_string):
-#     index = random.randint(0,len(all_letters))
-#     letter = all_letters[index]
-#     random_string += letter
-# print(random_string)
+all_letters = string.ascii_lowercase
+random_string =""
+lenght_rnd_string = 5
+for i in range(lenght_rnd_string):
+    index = random.randint(0,len(all_letters))
+    letter = all_letters[index]
+    random_string += letter
+print(random_string)
 
-# ##Exercise 4: Current Date
-# today = datetime.date.today()
-# print(today)
+##Exercise 4: Current Date
+today = datetime.date.today()
+print(today)
 
-# #Exercise 5: Amount of time left until January 1st
-# the_start_of_year = datetime.date(today.year+1,1,1)
-# days_till_start = 365 - int(today.strftime('%j'))
-# print(days_till_start)
+#Exercise 5: Amount of time left until January 1st
+the_start_of_year = datetime.date(today.year+1,1,1)
+days_till_start = 365 - int(today.strftime('%j'))
+print(days_till_start)
 
-# ##Exercise 6: Birthday and minutes
+##Exercise 6: Birthday and minutes
 
-# def miniuts_alive(year, month, day):
-#     user_birthday = datetime.datetime(year, month, day)
-#     today = datetime.datetime.today()
-#     time_diff = today - user_birthday
-#     print(math.floor(time_diff.total_seconds()/60))
-# miniuts_alive(1990,9,24)
+def miniuts_alive(year, month, day):
+    user_birthday = datetime.datetime(year, month, day)
+    today = datetime.datetime.today()
+    time_diff = today - user_birthday
+    print(math.floor(time_diff.total_seconds()/60))
+miniuts_alive(1990,9,24)
 
-# ##Exercise 7: Faker Module
+##Exercise 7: Faker Module
 
-# user_list = []
-# def add_users(num):
-#     for i in range(num):
-#         fake = Faker()
-#         user_dict = {}
-#         user_dict["name"] = fake.name()
-#         user_dict["address"] = fake.address()
-#         user_dict["language_code"] = fake.language_code()
-#         user_list.append(user_dict)
+user_list = []
+def add_users(num):
+    for i in range(num):
+        fake = Faker()
+        user_dict = {}
+        user_dict["name"] = fake.name()
+        user_dict["address"] = fake.address()
+        user_dict["language_code"] = fake.language_code()
+        user_list.append(user_dict)
 
-# add_users(2)
-# print(user_list)
+add_users(2)
+print(user_list)
