@@ -2,11 +2,11 @@
 import math
 
 class Circle:
-    def __init__(self, radius):
+    def __init__(self, radius = None, diameter =None):
+        if diameter and radius == None:
+            radius = round(diameter/2,2)
         self.radius = self.format_radius(radius)
 
-    # @classmethod
-    # def form_radius(cls, diameter):
 
     @staticmethod
     def format_radius(radius):
@@ -17,8 +17,8 @@ class Circle:
         return round(3.14*self.radius**2) 
     
     def __str__(self):
-        return f"Circle Radius: {self.radius} Area: {self.area}"
-    
+            return f"Circle Radius: {self.radius} Area: {self.area}"
+        
     def __add__(self,other):
         sum_area = self.area + other.area
         sum_radius = math.sqrt(sum_area/3.14)
@@ -38,7 +38,7 @@ c2 = Circle(2)
 print(c2)
 c3 = c1 + c2
 print(c3)
-c4 = Circle(2)
+c4 = Circle(diameter=4)
 
 print(c1>c2)
 print(c1==c2)
@@ -49,7 +49,7 @@ def print_list(list):
     for circle in list:
         print(circle)
 print_list(circles_list)
-print("#####")
+print("##### after sorting ######")
 circles_list.sort()
 print_list(circles_list)
 
