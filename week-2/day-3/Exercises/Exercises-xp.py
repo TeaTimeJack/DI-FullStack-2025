@@ -22,7 +22,7 @@ class Currency:
         return int(self.amount)
     
     def __repr__(self):
-        return f"{self.__dict__}"
+        return f"Currency: {self.currency}, Amount: {self.amount}"
     
     def __add__(self, other):
             if type(other) == int:
@@ -33,7 +33,7 @@ class Currency:
                     temp = self.amount + other.amount
                     return temp
                 else:
-                    print( TypeError(f"Cannot add between Currency type {self.currency} and {other.currency}"))
+                    raise TypeError(f"Cannot add between Currency type {self.currency} and {other.currency}")
 
     def __iadd__(self, other):
         if type(other) == int:
@@ -68,19 +68,18 @@ print(c1)
 c1 += c2
 print(c1)
 # 20 dollars
-print(c1 + c3)
+# print(c1 + c3)
 # TypeError: Cannot add between Currency type <dollar> and <shekel>
 
 
-
 ## Exercise 3: String module
-
 all_letters = string.ascii_lowercase
-random_string =""
+random_string = ""
 lenght_rnd_string = 5
 for i in range(lenght_rnd_string):
-    index = random.randint(0,len(all_letters))
-    letter = all_letters[index]
+    letter = random.choice(all_letters)
+#     index = random.randint(0,len(all_letters))
+#     letter = all_letters[index]
     random_string += letter
 print(random_string)
 
@@ -94,16 +93,15 @@ days_till_start = 365 - int(today.strftime('%j'))
 print(days_till_start)
 
 ##Exercise 6: Birthday and minutes
-
-def miniuts_alive(year, month, day):
-    user_birthday = datetime.datetime(year, month, day)
+def miniuts_alive(date):
+    user_birthday = datetime.datetime(int(date[6:10]),int(date[3:5]),int(date[0:2]))
+    print(f" userbirthday = {user_birthday}")
     today = datetime.datetime.today()
     time_diff = today - user_birthday
     print(math.floor(time_diff.total_seconds()/60))
-miniuts_alive(1990,9,24)
+miniuts_alive("24.09.1990")
 
 ##Exercise 7: Faker Module
-
 user_list = []
 def add_users(num):
     for i in range(num):
@@ -116,3 +114,5 @@ def add_users(num):
 
 add_users(2)
 print(user_list)
+
+    
