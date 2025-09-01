@@ -9,7 +9,7 @@ class AnagramChecker:
         cap_word = word.upper()
         return cap_word
     
-    def make_list_from_txt_file():
+    def make_list_from_txt_file(self):
         file_path = "week-2/day-5-mini-projct/Exercise/sowpods.txt"
         text_file_list=[]
         with open(file_path, 'r') as file:
@@ -41,15 +41,15 @@ class AnagramChecker:
 
     def get_anagrams(self):
         if self.is_valid_word():
-            list_of_anagrams = ()
+            set_of_anagrams = set()
             for word in self.list_of_words:
                 if len(word) != len(self.word):
                     continue
                 if word == self.word:
                     continue
                 if self.is_anagram(word):
-                    list_of_anagrams.append(word.lower())
-            return list_of_anagrams
+                    set_of_anagrams.add(word.lower())
+            return set_of_anagrams
         else:
             return None
 
