@@ -1,4 +1,4 @@
-
+import os
 import string
 
 class Text:
@@ -72,9 +72,14 @@ text1 = TextModification(text_demo)
 print(text1.word_frequency("the"))
 print(text1.most_common_word())
 print(text1.unique_words())
-
 print(text1.text)
 print(text1.remove_punctuation())
 print(text1.text)
-
 print(text1.remove_stop_words())
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
+text_file_path =dir_path+"\my-article-text.txt" 
+text2 = text1.from_file(text_file_path)
+print(text2.text)
+print(text2.most_common_word())
+print(text2.remove_stop_words())
