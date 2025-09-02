@@ -2,11 +2,10 @@
 import math
 
 class Circle:
-    def __init__(self, radius = None, diameter =None):
-        if diameter and radius == None:
+    def __init__(self, radius = 0, diameter = 0):
+        if diameter and radius == 0:
             radius = round(diameter/2,2)
         self.radius = self.format_radius(radius)
-
 
     @staticmethod
     def format_radius(radius):
@@ -31,7 +30,6 @@ class Circle:
     def __eq__(self, other):
         return self.area == other.area
     
-    
 c1 = Circle(5)
 print(c1)
 c2 = Circle(2)
@@ -52,4 +50,3 @@ print_list(circles_list)
 print("##### after sorting ######")
 circles_list.sort()
 print_list(circles_list)
-
