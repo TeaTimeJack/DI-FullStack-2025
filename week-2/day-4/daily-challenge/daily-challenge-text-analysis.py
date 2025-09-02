@@ -5,6 +5,13 @@ class Text:
     def __init__(self, text):
         self.text = text
 
+    # @classmethod
+    # def from_file(cls,file_path):
+    #     with open(file_path ,"r", encoding= "utf-8") as f:
+    #         text_content = f.read()
+    #         text = Text(text_content)
+    #         return text
+
     def word_frequency(self, the_word):
         list_text = self.text.split()
         count = 0
@@ -80,6 +87,6 @@ print(text1.remove_stop_words())
 dir_path = os.path.dirname(os.path.realpath(__file__))
 text_file_path =dir_path+"\my-article-text.txt" 
 text2 = text1.from_file(text_file_path)
-print(text2.text)
+# print(text2.text)
 print(text2.most_common_word())
 print(text2.remove_stop_words())
