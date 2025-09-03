@@ -58,9 +58,19 @@ class Deck:
             # self.the_deck.remove(removed_card)
             # self.the_deck.append(removed_card)
         return self
+    
+    def deal(self):
+        delt_card = self.the_deck.pop()
+        self.deck_size = len(self.the_deck)
+        return delt_card
+
        
 
 deck1 = Deck()
 print(deck1)
 deck1.shuffle()
+print(deck1)
+print(deck1.deal())
+print(deck1.deal())
+print(deck1.deal())
 print(deck1)

@@ -2,7 +2,6 @@ import os
 import random
 import json
 
-
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 #Exercise 1: Random Sentence Generator
@@ -41,7 +40,7 @@ def main():
 
 main()
 
-#Exercise 2: Working with JSON
+# Exercise 2: Working with JSON
 
 sampleJson = """{ 
    "company":{ 
@@ -56,7 +55,7 @@ sampleJson = """{
 }"""
 
 loaded_sample = json.loads(sampleJson)
-# print(type(loaded_sample))
+print(type(loaded_sample))
 print(loaded_sample["company"]["employee"]["payable"]["salary"])
 loaded_sample["company"]["employee"]["birth_date"] = "YYYY-MM-DD"
 loaded_sample["company"]["employee"]["birth_date"] = "1990-09-24"
