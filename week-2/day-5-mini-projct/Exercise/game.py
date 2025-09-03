@@ -2,7 +2,6 @@
 import random
 
 class Game:
-      
     def get_user_item(self):
         # ... code to get and validate user input ...
         valid_choices = ["R","r","P","p","S","s"]
@@ -41,7 +40,6 @@ class Game:
             return "win"
         else: return "lose"
         
-
     def play(self):
         # ... code to get user and computer choices ...
         user_choice = self.get_user_item()
@@ -56,10 +54,8 @@ class Game:
         # ... code to return game result ...
         return game_result
 
-game1 = Game()
-# my_choice = game1.get_user_item()
-# print(my_choice)
-# print(game1.get_computer_item())
+# game1 = Game()s
+# game1.play()
 
 
 
