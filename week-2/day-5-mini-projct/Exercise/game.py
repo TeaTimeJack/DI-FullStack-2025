@@ -7,7 +7,7 @@ class Game:
         valid_choices = ["R","r","P","p","S","s"]
         the_choice = ""
         while the_choice == "":
-            user_input = input("Type 'R' for Rock, 'P' for Paper, 'S' for Scissors (to exit type 'E'): ")
+            user_input = input("Type:\n'R' - for Rock \n'P' - for Paper \n'S' - for Scissors \n(to exit type 'E'): ")
             if user_input == valid_choices[0] or user_input == valid_choices[1]:
                 the_choice = "rock"
             elif user_input == valid_choices[2] or user_input == valid_choices[3]:
@@ -56,21 +56,6 @@ class Game:
 
 # game1 = Game()s
 # game1.play()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # if user_item == computer_item:

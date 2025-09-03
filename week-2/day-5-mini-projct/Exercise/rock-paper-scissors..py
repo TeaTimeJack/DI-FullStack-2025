@@ -1,9 +1,5 @@
 
-
 from game import Game
-
-
-
 
 def get_user_menu_choice():
     # ... code to display menu and get user choice ...
@@ -25,20 +21,22 @@ def print_results(results):
 
 def main():
     # ... code to call all the related functions depending on the user's choice.
+    games_results = {
+                "win": 0,
+                "lose": 0,
+                "draw": 0
+            } 
     while True:
         num_chosen = get_user_menu_choice()
         if num_chosen == 1:
              game1 = Game()
-             game1.play()
-
-    games_results = {
-                "win": 0,
-                "lose": 0,
-                "draw:":0
-            } 
-
-
-
-if __name__ == "__main__":
-    main()
+             result = game1.play()
+             games_results[result] +=1
+        elif num_chosen == 2:
+             print_results(games_results)
+        elif num_chosen == 3:
+              print_results(games_results)
+              break
+    # if __name__ == "__main__":
+main()
 
