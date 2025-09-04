@@ -1,0 +1,27 @@
+
+
+Answer the following questions:
+
+1.What is a class?
+a class is a data structure that is used to creat modoffide and complex objects
+
+2.What is an instance?
+an instence is an object that was created though a class
+
+3.What is encapsulation?
+incapsulanion is the fact that you can take unorganaized data and unit them to an orgeniized and easy to reach object
+
+4.What is abstraction?
+abstraction is the idea of showing only the essential information to the user while hiding the complex
+
+5.What is inheritance?
+inheritance is a feature of a classes  that alowes a class (child) to get all the parameters and methods of another class (perent) and even add more parameters and method of it own.
+
+6.What is multiple inheritance?
+Multiple inheritance is when a single class inherits from more than one parent class
+
+7.What is polymorphism?
+polymorphism meens that one class can have meny forms as diffrent objects so each instence can be perfome the same methods with diffrent outputs
+
+8.What is method resolution order or MRO?
+In multiple inheritance, where a class inherits from more than one parent, the MRO resolves potential multiple meenings and ensure that the correct method is called
