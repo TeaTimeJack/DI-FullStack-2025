@@ -96,6 +96,11 @@ for i in range(len(new_list)):
 print(new_list)
 
 
+# # 4. High-Value Transactions
+# high_value_transactions = [transaction for transaction in sales_data if transaction["total_price"] > 500]
+# # Sorting without lambda
+# high_value_transactions.sort(key=lambda x: x["total_price"], reverse=True)
+
 
 # # 5. Customer Loyalty Identification
 # purchase_counts = {}
