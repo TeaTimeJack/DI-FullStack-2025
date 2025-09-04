@@ -30,14 +30,14 @@ class Deck:
 
     @classmethod
     def creat_deck(cls):
-        the_deck=[]
+        the_deck_list=[]
         suits = ("H", "D", "C", "S")
         for suit in suits:
             for val in range(1,14):
                 card=Card(suit,val)
-                the_deck.append(card)
-        return the_deck
-    
+                the_deck_list.append(card)
+        return  the_deck_list        
+         
     def __str__(self):
         return_string = ""
         for card in self.the_deck:
@@ -48,16 +48,19 @@ class Deck:
         return f"Deck size: {self.deck_size} \nCards in deck: {return_string}"
     
     def shuffle(self):
-        twice_current_deck_size = self.deck_size*2
-        for times in range(twice_current_deck_size):
-            random_card = random.choice(self.the_deck)
-            self.the_deck.remove(random_card)
-            self.the_deck.append(random_card)
+        random.shuffle(self.the_deck)
+        return self
+        # twice_current_deck_size = self.deck_size*2
+        # for times in range(twice_current_deck_size):
+        #     random_card = random.choice(self.the_deck)
+        #     self.the_deck.remove(random_card)
+        #     self.the_deck.append(random_card)
+
+
             # random_index = random.randint(0,current_deck_size-1) 
             # removed_card = self.the_deck[random_index]
             # self.the_deck.remove(removed_card)
             # self.the_deck.append(removed_card)
-        return self
     
     def deal(self):
         delt_card = self.the_deck.pop()
