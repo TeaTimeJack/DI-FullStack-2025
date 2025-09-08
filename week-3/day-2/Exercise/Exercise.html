@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise day 2</title>
+</head>
+<body>
+    <div id="container">Users:</div>
+    <ul class="list">
+        <li>John</li>
+        <li>Pete</li>
+    </ul>
+    <ul class="list">
+        <li>David</li>
+        <li>Sarah</li>
+        <li>Dan</li>
+    </ul>
+
+
+    <script> 
+        let divText =  document.querySelector("#container");
+        // Retrieve the div and console.log it
+        console.log(divText);
+        // Change the name “Pete” to “Richard”.
+        document.querySelector(".list li:last-child").innerHTML = "Richard";
+        // Delete the second <li> of the second <ul>.
+        let ulList =document.querySelectorAll(".list")
+        let saraChild = ulList[1].children[1];
+        ulList[1].removeChild(saraChild);
+        // Change the name of the first <li> of each <ul> to your name. (Hint : use a loop)
+        let firstList = ulList[0].children
+        for (let i = 0; i < firstList.length; i++) {
+            const name = firstList[i];
+            name.innerHTML = "Amit"
+        }
+        
+        // Add a class called student_list to both of the <ul>'s.
+        for (let i = 0; i < ulList.length; i++) {
+            let element = ulList[i];
+            element.setAttribute("class", "student_list");
+        }    
+        // Add the classes university and attendance to the first <ul>.
+        ulList[0].className += " university";
+        ulList[0].className += " attendance";
+        // Add a “light blue” background color and some padding to the <div>.
+        divText.style.backgroundColor = "lightblue";
+        // Do not display the <li> that contains the text node “Dan”. (the last <li> of the first <ul>)
+        let danChild =  ulList[1].children[1]  
+        danChild.style.display = "None" 
+        // Add a border to the <li> that contains the text node “Richard”. (the second <li> of the <ul>)
+        document.querySelector(".student_list li:last-child").style.border = "black solid 2px"
+        // Change the font size of the whole body.    
+        document.body.style.fontSize = "25px"
+
+    
+
+    </script>
+    <script src="exercise-XP.js"></script>
+</body>
+</html>
