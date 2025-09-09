@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article>
+        <h1> Some Facts </h1>
+        <h2> The Chocolate </h2>
+        <h3> History of the chocolate </h3>
+        <p> Chocolate is made from tropical Theobroma cacao tree seeds. 
+        Its earliest use dates back to the Olmec civilization in Mesoamerica.</p>
+        <p> After the European discovery of the Americas, chocolate became 
+        very popular in the wider world, and its demand exploded. </p>
+        <p> Chocolate has since become a popular food product that millions enjoy every day, 
+        thanks to its unique, rich, and sweet taste.</p> 
+        <p> But what effect does eating chocolate have on our health?</p> 
+    </article>
+
+    <script>
+        let h1elm = document.querySelector("h1");
+        console.log(h1elm.innerHTML);
+        let articleelm = document.querySelector("article");
+        let lastChild = document.querySelector("article p:last-child");
+        articleelm.removeChild(lastChild);
+        let h2elm = document.querySelector("h2");
+        h2elm.addEventListener("click", () => h2elm.style.backgroundColor = "red");
+        let h3elm = document.querySelector("h3");
+        h3elm.addEventListener("click", () => h3elm.style.display = "none");
+        let allpelm = document.querySelectorAll("p");
+        let newBotton = document.createElement("button");
+        newBotton.innerHTML = "Text P to Bold"
+        newBotton.addEventListener("click", () => {
+            for (let i = 0; i < allpelm.length; i++) {
+                const element = allpelm[i];
+                element.style.fontWeight = "bold"
+            }
+        })
+        document.body.appendChild(newBotton)
+
+
+        
+
+    </script>
+</body>
+</html>

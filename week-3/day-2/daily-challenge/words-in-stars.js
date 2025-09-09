@@ -5,6 +5,7 @@ usersInput = "Hello, World, in, a, frame"
 usersArray = usersInput.split(", ")
 
 frameSring = ""
+// add a loop to find the longest word = then use that word length to add stars
 for (let i = 0; i < usersArray.length+4; i++) {
     frameSring +="*"
 }
