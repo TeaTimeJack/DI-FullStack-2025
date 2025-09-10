@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>Challenge: Mad Libs</title>
+ </head>
+ <body>
+
+    <h1>Mad Libs</h1>
+
+    <form id="libform">
+        <label for="noun">Noun:</label>
+        <input type="text" id="noun"><br>
+
+        <label for="adjective">Adjective:</label>
+        <input type="text" id="adjective"><br>
+
+        <label for="person">Someone's Name:</label>
+        <input type="text" id="person"><br>
+
+        <label for="verb">Verb:</label>
+        <input type="text" id="verb"><br>
+
+        <label for="place">A place:</label>
+        <input type="text" id="place"><br>
+
+        <button id="lib-button">Lib it!</button>
+    </form>
+
+    <p>Generated story: 
+    <span id="story"></span>
+    </p>
+
+    <script>
+        let formelm = document.getElementById("libform")
+        let nounInp =  document.getElementById("noun");
+        let adjInp =  document.getElementById("adjective");
+        let personInp =  document.getElementById("person");
+        let verbInp =  document.getElementById("verb");
+        let placeInp =  document.getElementById("place");
+        let storyP = document.getElementById("story")
+        formelm.addEventListener("submit", (e) =>{
+            e.preventDefault();
+            if(nounInp.value === "" || adjInp.value === "" || personInp.value === "" || verbInp.value === "" || placeInp.value === ""){
+                alert("Make sure you fill in all the inputs - thank you.")
+            }else{
+                storyP.innerHTML = `<br> A ${adjInp.value} ${nounInp.value} was with ${personInp.value} ${verbInp.value} at the ${placeInp.value}.`
+            }
+        })
+
+    </script>
+
+ </body>
+</html>
