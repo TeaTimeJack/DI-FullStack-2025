@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <style>
+        p {
+          background: yellow;
+          color: red;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="container"></div>
+        <button id="clear">Clear Interval</button>
+
+        <script>
+            setTimeout(() => {
+                alert("Hello World")
+            }, 2000);
+            let divElm = document.getElementById("container");
+            function creatP() {
+                const pElm = document.createElement("p");
+                pElm.textContent = "Hello World";
+                divElm.appendChild(pElm);
+            }
+            // setTimeout(creatP(), 2000);
+            let timer = setInterval(() =>{
+                creatP()
+                if(divElm.childElementCount === 5){
+                    clearInterval(timer)
+                }
+            }, 2000);
+
+            document.getElementById("clear").addEventListener("click",() =>{
+                clearInterval(timer)
+            });
+        </script>
+    </body>
+    </html>
