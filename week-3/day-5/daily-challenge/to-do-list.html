@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+
+    <form>
+        <input id="inpTxt" type="text">
+        <input id="sbt" type="submit">
+    </form>
+    
+    <div id="listTasks"></div>
+
+    <script>
+        let inpElm = document.getElementById("inpTxt");
+        let tasksListDiv = document.getElementById("listTasks");
+        let submitButton = document.getElementById("sbt");
+        const tasks = [];
+        function addTask() {
+            if(inpElm.value){
+                tasks.push(inpElm.value);
+                let spanTask = document.createElement("span");
+                spanTask.innerHTML = inpElm.value
+                let btn = document.createElement('button');
+                btn.innerHTML="X";
+                let checB = document.createElement("input");
+                checB.type = "checkbox";
+                let divOfTask = document.createElement("div");
+                divOfTask.appendChild(btn);
+                divOfTask.appendChild(checB);
+                divOfTask.appendChild(spanTask);
+                tasksListDiv.appendChild(divOfTask)
+            }
+            console.log(tasks)
+        }
+
+        submitButton.addEventListener("click",(e) =>{
+            e.preventDefault();
+            addTask();
+        });
+    </script>
+</body>
+</html>
