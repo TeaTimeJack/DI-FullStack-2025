@@ -8,7 +8,7 @@
 </head>
     <body>
 	<div id="sidebar">
-		<button>Clear</button>
+		<button id="clear">Clear</button>
 		<div style="background-color: red;" class="colorOption"></div>
 		<div style="background-color: orangered;" class="colorOption"></div>
 		<div style="background-color: orange;" class="colorOption"></div>
@@ -28,7 +28,7 @@
 		<div style="background-color: lightpink;" class="colorOption"></div>
 		<div style="background-color: lightgray;" class="colorOption"></div>
 		<div style="background-color: gray;" class="colorOption"></div>
-		<div style="background-color: black;;"  class="colorOptionBlack"></div>
+		<div style="background-color: black;;"  class="colorOption optionBlack"></div>
 		<div style="background-color: white;" class="colorOption"></div>
 	</div>
 	<div id="main">
@@ -1615,5 +1615,56 @@
 		<div></div>
 	</div>
 
+	<script>
+		let colorPicked ="";
+		let prevColorElm;
+		let isDrawing = false
+		let colorsButtons = document.getElementsByClassName("colorOption");
+		let pxlBoxs = document.getElementById("main").children;
+		let clerBtn = document.getElementById("clear");
+
+		clerBtn.addEventListener("click", ()=>{
+			for (let i = 0; i < pxlBoxs.length; i++) {
+				const pxl = pxlBoxs[i];
+				pxl.style.backgroundColor = "white"
+				
+			}
+		})
+
+		for (let i = 0; i < colorsButtons.length; i++) {
+			const colorBtn = colorsButtons[i];
+			colorBtn.addEventListener('click',()=>{
+				if(prevColorElm){
+					prevColorElm.innerHTML = ""
+				}
+				prevColorElm = colorBtn
+				colorBtn.innerHTML= "<span>O</span>"
+				colorPicked = colorBtn.style.backgroundColor
+				console.log(colorPicked)
+			})
+			
+		}
+
+		for (let i = 0; i < pxlBoxs.length; i++) {
+			const pxl = pxlBoxs[i];
+			const hoverPxl = () => {}
+			pxl.addEventListener("mousedown", () =>{
+				isDrawing = true
+				pxl.style.backgroundColor = colorPicked
+			})
+			pxl.addEventListener("mouseover", ()=>{
+				if(isDrawing){
+					pxl.style.backgroundColor=colorPicked;
+				}
+			})
+			pxl.addEventListener("mouseup", ()=>{
+				isDrawing = false
+				// pxl.style.backgroundColor=colorPicked
+			})
+				
+		}
+		
+		
+	</script>
 </body>
 </html>

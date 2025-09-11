@@ -25,22 +25,24 @@ div {
     background-color: darkgrey;
     /* border: 2px red solid; */
     padding: 5px;
+    
 }
 .colorOption{
     border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.colorOption:hover{
-    border: 2px black solid;
-    cursor: pointer;
-}
-.colorOptionBlack{
+
+.optionBlack{
+    color: white;
      border: 1px solid white;
      border-radius: 20px;
+     display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.colorOptionBlack:hover{
-    border: 2px red solid;
-    cursor: pointer;
-}
+
 #main {
     display: grid
 ;
@@ -65,6 +67,16 @@ button {
     cursor: pointer;
 }
 button:hover{
+    margin: 2px 0px;
     border: 2px black solid;
+}
+.colorOption:hover{
+    border: 2px black solid;
+    cursor: pointer;
+}
+
+.optionBlack:hover{
+    border: 2px red solid;
+    cursor: pointer;
 }
 

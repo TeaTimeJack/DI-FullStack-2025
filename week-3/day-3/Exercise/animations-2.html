@@ -27,8 +27,8 @@
                 let redBox = document.getElementById("animate");
                 let boxMargin = 0
                 let timer = setInterval(() => {
-                    boxMargin += 1 
-                    redBox.style.marginLeft = `${boxMargin}px`
+                    // boxMargin ++ 
+                    redBox.style.marginLeft = `${boxMargin++}px`
                     if(boxMargin === 350){
                         clearInterval(timer)
                     }
