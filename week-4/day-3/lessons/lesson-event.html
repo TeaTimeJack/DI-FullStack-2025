@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 onclick="alert('I\'m an event!')">I'm a heading<h1> 
+    <h1 id=heading-2>I'm a second heading<h1>
+    <h1 id=heading-3>I'm a third heading<h1>
+
+    <table id="sampleTable" border="1"> 
+        <tr>
+            <td>Row1 cell1</td> 
+            <td>Row1 cell2</td>
+        </tr> 
+        <tr>
+            <td>Row2 cell1</td>
+            <td>Row2 cell2</td>
+        </tr> 
+    </table>
+
+    <input type="button" onclick="insertRow()" value="Insert row"> 
+
+
+    <script>            
+            const heading2 = document.querySelector("#heading-2");     
+            heading2.onclick = () => alert("I'm a second event");
+            const heading3 = document.querySelector("#heading-3");
+            heading3.addEventListener(                                                                                                          "click",
+                    () => alert("I'm a third event")
+            );
+    </script>
+    <script>
+        function insertRow(){
+            newRow = document.createElement("tr");
+            tData1 = document.createElement("td");
+            tData1.textContent = "Row3 cell1";
+            tData2 = document.createElement("td");
+            tData2.textContent = "Row3 cell2";
+            newRow.appendChild(tData1);
+            newRow.appendChild(tData2);
+            theTable = document.getElementById("sampleTable");
+            theTable.appendChild(newRow);
+        }
+    </script>
+</body>
+</html>

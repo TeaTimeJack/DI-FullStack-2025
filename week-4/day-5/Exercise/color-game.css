@@ -1,0 +1,82 @@
+
+
+#main > * {
+    border: 1px lightgray solid;
+    background-color: white;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+#sidebar {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    height: 100vh;
+    width: 20%;
+    float: left;
+    background-color: darkgrey;
+    /* border: 2px red solid; */
+    padding: 5px;
+    
+}
+.colorOption{
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.optionBlack{
+    color: white;
+     border: 1px solid white;
+     border-radius: 20px;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main {
+    display: grid
+;
+    grid-template-columns: repeat(60, 1fr);
+    height: 100vh;
+    /* background-color: darkgrey; */
+    /* border: 2px red solid; */
+    padding: 5px 5px 5px 0;
+}
+button {
+    grid-column: 1 / 4;
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 8px;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+button:hover{
+    margin: 2px 0px;
+    border: 2px black solid;
+}
+.colorOption:hover{
+    border: 2px black solid;
+    cursor: pointer;
+}
+
+.optionBlack:hover{
+    border: 2px red solid;
+    cursor: pointer;
+}
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <style>
+        #container {
+          width: 400px;
+          height: 400px;
+          position: relative;
+          background: yellow;
+        }
+        #animate {
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          background-color: red;
+        }
+        </style>
+    </head>
+    <body>
+        <p><button onclick="myMove()">Click Me</button></p>
+        <div id="container">
+          <div id="animate"></div>
+        </div>
+
+        <script>
+            function myMove() {
+                let redBox = document.getElementById("animate");
+                let boxMargin = 0
+                let timer = setInterval(() => {
+                    // boxMargin ++ 
+                    redBox.style.marginLeft = `${boxMargin++}px`
+                    if(boxMargin === 350){
+                        clearInterval(timer)
+                    }
+                }, 1);
+            }
+        </script>
+    </body>
+    </html>

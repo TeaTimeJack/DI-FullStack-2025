@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- <form id="form1" onsubmit="getvalue()">  -->
+        <!-- <label>First name: </label><input type="text" name="fname" value="David"><br> 
+        <label>Last name: </label><input type="text" name="lname" value="BenGurion"><br> 
+        <input type="submit" value="Submit"> 
+    </form> -->
+    <form name="my">
+        <label for="usercomment">Enter some text</label>
+        <input id="usercomment" type="text" value="text"><br>
+        <input type="submit" value="Submit">
+    </form>
+      <script>
+            let form = document.forms.my;
+            form.addEventListener("submit", getUserComments)
+            function getUserComments(){
+              alert('submit !')
+            }
+    </script>
+    <!-- <script>
+        function getvalue() {
+            console.log(document.forms.form1.elements.fname.value);
+            console.log(document.forms.form1.elements.lname.value);
+        }
+    </script>  -->
+    
+</body>
+</html>
