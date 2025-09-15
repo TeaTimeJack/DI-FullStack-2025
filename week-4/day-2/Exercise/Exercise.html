@@ -3,59 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise day 2</title>
+    <title>Exercises XP day 2 week 4</title>
 </head>
 <body>
-    <div id="container">Users:</div>
-    <ul class="list">
-        <li>John</li>
-        <li>Pete</li>
-    </ul>
-    <ul class="list">
-        <li>David</li>
-        <li>Sarah</li>
-        <li>Dan</li>
-    </ul>
 
-
-    <script> 
-        let divText =  document.querySelector("#container");
-        // Retrieve the div and console.log it
-        console.log(divText);
-        // Change the name “Pete” to “Richard”.
-        document.querySelector(".list li:last-child").innerHTML = "Richard";
-        // Delete the second <li> of the second <ul>.
-        let ulList =document.querySelectorAll(".list")
-        let saraChild = ulList[1].children[1];
-        ulList[1].removeChild(saraChild);
-        // Change the name of the first <li> of each <ul> to your name. (Hint : use a loop)
-        let firstList = ulList[0].children
-        for (let i = 0; i < firstList.length; i++) {
-            const name = firstList[i];
-            name.innerHTML = "Amit"
+    <script>
+        const person = {
+            name: 'John Doe',
+            age: 25,
+            location: {
+                country: 'Canada',
+                city: 'Vancouver',
+                coordinates: [49.2827, -123.1207]
+            }
         }
-        
-        // Add a class called student_list to both of the <ul>'s.
-        for (let i = 0; i < ulList.length; i++) {
-            let element = ulList[i];
-            element.setAttribute("class", "student_list");
-        }    
-        // Add the classes university and attendance to the first <ul>.
-        ulList[0].className += " university";
-        ulList[0].className += " attendance";
-        // Add a “light blue” background color and some padding to the <div>.
-        divText.style.backgroundColor = "lightblue";
-        // Do not display the <li> that contains the text node “Dan”. (the last <li> of the first <ul>)
-        let danChild =  ulList[1].children[1]  
-        danChild.style.display = "None" 
-        // Add a border to the <li> that contains the text node “Richard”. (the second <li> of the <ul>)
-        document.querySelector(".student_list li:last-child").style.border = "black solid 2px"
-        // Change the font size of the whole body.    
-        document.body.style.fontSize = "25px"
 
-    
+        const {name, location: {country, city, coordinates: [lat, lng]}} = person;
+
+        console.log(`I am ${name} from ${city}, ${country}. Latitude(${lat}), Longitude(${lng})`);
+
+
+        function displayStudentInfo(objUser){
+            const {first, last} = objUser;
+            console.log(`Your full name is ${first} ${last}`);
+        }
+        displayStudentInfo({first: 'Elie', last:'Schoppik'});
+
+        // Exercise 3: User & id
+        const users = { user1: 18273, user2: 92833, user3: 90315 }
+        const usersArray = Object.entries(users);
+        console.log(usersArray);
+        
+        usersArray.map(user => {
+            user[1] = user[1]*2
+        });
+        console.log(usersArray);
+
+        class Person {
+            constructor(name) {
+                this.name = name;
+            }
+            }
+
+        const member = new Person('John');
+        console.log(typeof member);
+        // Object
+
+
+        // Exercise 5 : Dog class
+        // 2
+
+        // Exercise 6 : Challenges
+        console.log([2] === [2]);
+        console.log({} === {});
+
+        const object1 = { number: 5 }; 
+        const object2 = object1; 
+        const object3 = object2; 
+        const object4 = { number: 5};
+
+        object1.number = 4;
+        console.log(object2.number)
+        console.log(object3.number)
+        console.log(object4.number)
+
+        class Animal{
+            constructor(name,type, color){
+                this.name = name,
+                this.type = type,
+                this.color = color
+            }
+        }
+
+        class Mammal extends Animal{
+             constructor(name, type, color) {
+                super(name, type, color);
+            }
+
+            sound(snd){
+                return `${snd} I'm a ${this.type}, named ${this.name} and I'm ${this.color}`
+            }
+        }
+
+        const farmerCow = new Mammal("Lily", "cow", "brown and white");
+        console.log(farmerCow.sound("Moooo"));
+         
+        
 
     </script>
-    <script src="exercise-XP.js"></script>
 </body>
 </html>
