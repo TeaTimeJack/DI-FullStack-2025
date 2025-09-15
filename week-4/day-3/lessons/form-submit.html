@@ -6,41 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-     <form>
-      <label for="mail">I would like you to provide me with an e-mail address:</label>
-      <input type="email" id="mail" name="mail">
-      <label for="name">Your name:
-      <input type="text" id="name" name="name" required>
-      <p>
-          <label>Enter your phone number in the format (123)456-7890
-           <input name="tel1" type="tel" pattern="[0-9]{3}" placeholder="###" size="2"/>-
-           <input name="tel2" type="tel" pattern="[0-9]{3}" placeholder="###" size="2"/> -
-           <input name="tel3" type="tel" pattern="[0-9]{4}" placeholder="####" size="3"/>
-         </label>
-        </p>
-      <button>Submit</button>
+    <form id="myform" name="my" action="formdata.html" method="POST">
+      <label for="username">Username</label>
+      <input type="text" name="username" value="">
+      <label for="password">password</label>
+      <input type="text" name="password" value="">
+      <input type="submit" value="Submit">
     </form>
 
     <script>
-      const form  = document.getElementsByTagName('form')[0];
-      const email = document.getElementById("mail");
-      const name = document.getElementById("name");
-
-      email.addEventListener("input", function (event) {
-        if (email.validity.typeMismatch) {
-          email.setCustomValidity("I am expecting an e-mail address!");
-        } else {
-          email.setCustomValidity("");
-        }
-      });
-
-      form.addEventListener("submit", function (event) {
-        if(!email.validity.valid) {
-            email.setCustomValidity("I am expecting an e-mail address!");
-        } else {
-            email.setCustomValidity("");
-        }
-      });
+     
     </script>
 </body>
 </html>

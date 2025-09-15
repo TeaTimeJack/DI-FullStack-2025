@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form</title>
+</head>
+<body>
+
+    <form id="form1">
+        <input type="text" placeholder="First Name" id="fName">
+        <input type="text" placeholder="Last Name" id="lName">
+        <input type="submit" id="sbtBTN">
+    </form>
+    
+
+    <script>
+        const theFormElm = document.getElementById("form1");
+        const submitBTN = document.getElementById("sbtBTN");
+        const nameInput = document.getElementById("fName");
+        const lastName = document.getElementById("lName");
+        submitBTN.addEventListener("click",(e)=>{
+            e.preventDefault()
+            let otputObd = {}
+            otputObd["first name"] = nameInput.value;
+            otputObd["last name"] = lastName.value;
+            const newP = document.createElement("p");
+            newP.innerHTML = JSON.stringify(otputObd);
+            document.body.appendChild(newP);
+        })
+
+    </script>
+</body>
+</html>

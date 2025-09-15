@@ -40,8 +40,5 @@ gameInfo.forEach(user =>{
 });
 console.log(winners);
 
-let theSum = gameInfo.reduce((sum , user) => {
-    sum += user.score
-    return sum
-},0);
+const theSum = gameInfo.reduce((sum , user) => sum + user.score,0);
 console.log(theSum);
