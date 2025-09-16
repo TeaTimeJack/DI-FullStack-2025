@@ -7,7 +7,149 @@
 </head>
 <body>
     
+    <script>
 
-    <script src="daily-challenge.js"></script>
+        function makeAllCaps(wordArr) {
+            return new Promise((resolve, reject) =>{
+                const upperWords =[]
+                for (let i = 0; i < wordArr.length; i++) {
+                        const element = wordArr[i];
+                        if (typeof(element) !== "string"){
+                            reject("Not all of the values are strings")
+                        }
+                        upperWords.push(element.toUpperCase()) 
+                }
+                resolve(upperWords);
+            });   
+        }
+
+        function sortWords(wordArr) {
+            return new Promise((resolve, reject) =>{
+                if(wordArr.length > 4){
+                   resolve(wordArr.sort());
+                }else{
+                    reject("The Array of words not long enough");
+                }
+            })
+        }
+
+        //in this example, the catch method is executed
+        makeAllCaps([1, "pear", "banana"])
+            .then((arr) => sortWords(arr))
+            .then((result) => console.log(result))
+            .catch(error => console.log(error))
+
+        //in this example, the catch method is executed
+        makeAllCaps(["apple", "pear", "banana"])
+            .then((arr) => sortWords(arr))
+            .then((result) => console.log(result))
+            .catch(error => console.log(error))
+
+        //in this example, you should see in the console, 
+        // the array of words uppercased and sorted
+        makeAllCaps(["apple", "pear", "banana", "melon", "kiwi"])
+            .then((arr) => sortWords(arr))
+            .then((result) => console.log(result)) //["APPLE","BANANA", "KIWI", "MELON", "PEAR"]
+            .catch(error => console.log(error));
+
+
+        // 2nd daily challenge
+
+        const morse = `{
+            "0": "-----",
+            "1": ".----",
+            "2": "..---",
+            "3": "...--",
+            "4": "....-",
+            "5": ".....",
+            "6": "-....",
+            "7": "--...",
+            "8": "---..",
+            "9": "----.",
+            "a": ".-",
+            "b": "-...",
+            "c": "-.-.",
+            "d": "-..",
+            "e": ".",
+            "f": "..-.",
+            "g": "--.",
+            "h": "....",
+            "i": "..",
+            "j": ".---",
+            "k": "-.-",
+            "l": ".-..",
+            "m": "--",
+            "n": "-.",
+            "o": "---",
+            "p": ".--.",
+            "q": "--.-",
+            "r": ".-.",
+            "s": "...",
+            "t": "-",
+            "u": "..-",
+            "v": "...-",
+            "w": ".--",
+            "x": "-..-",
+            "y": "-.--",
+            "z": "--..",
+            ".": ".-.-.-",
+            ",": "--..--",
+            "?": "..--..",
+            "!": "-.-.--",
+            "-": "-....-",
+            "/": "-..-.",
+            "@": ".--.-.",
+            "(": "-.--.",
+            ")": "-.--.-"
+            }`
+
+            function toJs(){
+                morseObj = JSON.parse(morse);
+                return new Promise((resolve, reject) => {
+                    if(morseObj){
+                        resolve(morseObj);
+                    }else{
+                        reject("The Morse object is empty");
+                    }
+                });
+            };
+
+            function toMorse(morseJS){
+                const userWord = prompt("TYPE A WORD");
+                let returnedMorse = [];
+                return new Promise((resolve, reject) =>{
+                    for (let i = 0; i < userWord.length; i++) {
+                        const letter = userWord[i];
+                        if(letter === " "){
+                            returnedMorse.push(" ")
+                        }
+                        else if(letter in morseJS){
+                            returnedMorse.push(morseJS[letter]);
+                        }else{
+                            reject(`This letter '${letter}' does not exists in the object`);
+                        }
+                    }
+                    const pelmt = document.createElement("p")
+                    pelmt.innerHTML = `'${userWord}' gives you: `;
+                    document.body.appendChild(pelmt);
+                    resolve(returnedMorse)
+                });
+            };
+
+            function joinWords(morseTranslation){
+                for (let i = 0; i < morseTranslation.length; i++) {
+                    const morseText = morseTranslation[i];
+                    const newElm = document.createElement("p")
+                    newElm.innerHTML = morseText;
+                    document.body.appendChild(newElm);
+                }
+            }
+
+            toJs()
+            .then(morseObj => toMorse(morseObj))
+            .then(returnedMorse => joinWords(returnedMorse))
+            .catch(error => console.log(error));
+
+    </script>
 </body>
 </html>
