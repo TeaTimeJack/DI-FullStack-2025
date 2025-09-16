@@ -32,6 +32,16 @@
     </form>
 
     <script>
+
+        console.log(document.URL)
+        const editedurl = new URL(document.URL)
+        const firstNameFromOther = editedurl.searchParams.get("first");
+        const LastNameFromOther = editedurl.searchParams.get("last");
+        console.log(firstNameFromOther);
+        console.log(LastNameFromOther);
+        
+        
+        
         // Exercise 1 : HTML Form
         // When you click the Send button, the form will be submitted with a GET method. (you can use the same HTML file for the action url)
         // Where will the sent data appear?

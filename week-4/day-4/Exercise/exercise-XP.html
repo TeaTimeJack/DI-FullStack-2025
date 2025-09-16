@@ -7,76 +7,55 @@
 </head>
 <body>
 
-    <nav id="nav"></nav>
-    <p id="ex6"></p>
-    <p id="juice"></p>
-    <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiLO8rpYD4CntMnrkS0lG3hJJXMQ-mPuAZSNkZOgQE0Yr4fmep8k0v30Ys-41IhR3zj4K4a0IetPx-KNXM7u4AAUXHfgGf0Q-HI3E0EKHLpA" alt="profile pictrue" style="width: 250px; height: 300px;"> -->
-    
+  
     <script>
-    
-        // function winBattle(){
-        //     return true;
-        // }
 
-        let winBattle = () => true
-        let experiencePoints = winBattle? 10 : 1
-        console.log(experiencePoints)
-
-        const isString = (word) => typeof(word) === "string";
-        console.log(isString('hello')); 
-        console.log(isString([1, 2, 4, 0]));
-        const theSum = (a,b) => a+b;
-
-        const convert = kg => kg * 1000;
-
-        function convert2(kg) {
-        return  kg * 1000;
-        }
-
-        console.log(convert(0.2))
-        console.log(convert2(0.5))
-        // diffrents - amounts of lines it takes to write the function
-
-        const name =(numChildren, partnersName, location, job) =>{
-            document.getElementById("ex6").
-            innerHTML=`You will be a ${job} in ${location}, and married to ${partnersName} with ${numChildren} kids.`
-        };
-        name(2,"sara","israel", "programer");
-
-        function addDiv(name){
-            let navBar = document.getElementById("nav").
-            innerHTML += `<div><h1>Hello ${name}</h1><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiLO8rpYD4CntMnrkS0lG3hJJXMQ-mPuAZSNkZOgQE0Yr4fmep8k0v30Ys-41IhR3zj4K4a0IetPx-KNXM7u4AAUXHfgGf0Q-HI3E0EKHLpA" alt="profile pictrue" style="width: 250px; height: 300px;">`
-        };
-        addDiv("Jim Carry");
-
-        // Exercise 8 : Juice Bar
-
-        function makeJuice(size) {
-            let ingredients = []
-            function addIngredients(firstIng, seconedIng, thirdIng) {
-                ingredients.push(firstIng);
-                ingredients.push(seconedIng);
-                ingredients.push(thirdIng);
+        function compareToTen(num){
+            return new Promise((resolve, reject) =>{
+                if(num <= 10){
+                    resolve("the num is less then 10");
+                }else{
+                    reject("the num is greater then 10");
                 }
-            function displayJuice () {
-                    let domString = `The client wants a ${size} juice, containing: `;
-                    
-                    for (let i = 0; i < ingredients.length; i++) {
-                        const item = ingredients[i];
-                        if(i === ingredients.length-1){
-                            domString +=` ${item}.`
-                        }else{
-                            domString +=`${item}, `
-                        }
-                    }
-                   
-                    document.getElementById("juice").innerHTML = domString;
-                }
-            addIngredients("apple","banana", "orange");
-            addIngredients("lemon", "peach", "pear");
-            displayJuice()
+            });
         }
-        makeJuice("M");
+        
+        compareToTen(15)
+        .then(result => console.log(result))
+        .catch(error => console.log(error))
+       
+        compareToTen(8)
+        .then(result => console.log(result))
+        .catch(error => console.log(error))
+
+        function wait4sec() {
+            return new Promise((resolve) =>{
+                setTimeout(() => {
+                    resolve("Succses")
+                }, 4000);
+            })
+        }
+        wait4sec().then(result => console.log(result));
+
+        function checkIf3(num){
+            return new Promise((resolve, reject) =>{
+                if(num === 3){
+                    resolve("the num is 3");
+                }else{
+                    reject("Boo!");
+                }
+            });
+        }
+        checkIf3(3)
+        .then(result => console.log(result))
+        .catch(error => console.log(error))
+
+        checkIf3(5)
+        .then(result => console.log(result))
+        .catch(error => console.log(error))
+        
+
+
     </script>
 </body>
 </html>
