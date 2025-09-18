@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STAR WARS</title>
+</head>
+<body>
+
+    <h1>STAR WARS</h1>
+    <div id="details"></div>
+    <button id="findButton">Find Someone</button>
+    
+    <script>
+        const detailsDiv = document.getElementById("details");
+
+        async function getStarWarsCharecters() {
+            const randomNum = Math.floor((Math.random() * 10)+1);
+            const starWarsRespond = await fetch(`https://www.swapi.tech/api/people/${randomNum}`);
+            if(starWarsRespond.ok){
+                const starWarsObjct = await starWarsRespond.json();
+                const ulElm = document.createElement("ul");
+                const liName = document.createElement('li');
+                liName.innerHTML = starWarsObjct.result.properties.name;
+                ulElm.appendChild(liName);
+                const liHight = document.createElement('li');
+                liHight.innerHTML = starWarsObjct.result.properties.height;
+                ulElm.appendChild(liHight);
+                const liGender = document.createElement('li');
+                liGender.innerHTML = starWarsObjct.result.properties.gender;
+                ulElm.appendChild(liGender);
+                const liBirthYear = document.createElement('li');
+                liBirthYear.innerHTML = starWarsObjct.result.properties.birth_year;
+                ulElm.appendChild(liBirthYear);
+                
+                const homeApi = await fetch(starWarsObjct.result.properties.homeworld);
+                if(homeApi.ok){
+                    const homeApiObjct = await homeApi.json();
+                    const liHome = document.createElement('li');
+                    liHome.innerHTML = homeApiObjct.result.properties.name;
+                    ulElm.appendChild(liHome);
+                    detailsDiv.innerHTML = ""
+                    detailsDiv.appendChild(ulElm);
+                }else{
+                    throw Error("cant find the planet`s API")
+                }
+            }else{
+                throw Error("cant find the charecter`s API")
+            }
+        }
+        
+        const findButton = document.getElementById("findButton");
+        findButton.addEventListener("click", () =>{
+            detailsDiv.innerHTML = 'loading...'
+            getStarWarsCharecters();
+        })
+    </script>
+    
+</body>
+</html>
