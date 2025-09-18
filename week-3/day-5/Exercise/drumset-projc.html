@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>DRUMSET</title>
+</head>
+<body>
+      <div class="row" id="row1"></div>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        const letterArry = ["A","S","D","F","G","H","J","K","L"]
+        const soundsArry = ["boom","clap","hihat","kick","openhat","ride","snare","tink","tom"]
+
+        function makeCard(aLetter,aSound){
+            const rowDiv = document.getElementById("row1");
+            const div1 = document.createElement("div");
+            div1.classList.add("col");
+            div1.classList.add("s4");
+            div1.classList.add("m3");
+            div1.classList.add("l1");
+
+            const div2 = document.createElement("div");
+            div2.classList.add("card");
+            div2.classList.add("blue-grey");
+            div2.classList.add("darken-1");
+            div2.classList.add("sound-button");
+
+            const div3 = document.createElement("div");
+            div3.classList.add("card-content");
+            div3.classList.add("white-text");
+
+            const span1 = document.createElement("span");
+            span1.className = "card-title";
+            span1.innerHTML = aLetter;
+
+            const pElm = document.createElement("p");
+            pElm.innerHTML = aSound;
+
+            div3.appendChild(span1);
+            div3.appendChild(pElm);
+ 
+            div2.appendChild(div3);
+            div1.appendChild(div2);
+
+            rowDiv.appendChild(div1);
+        }
+        for (let i = 0; i < letterArry.length; i++) {
+            const letter = letterArry[i];
+            const sound = soundsArry[i];
+            makeCard(letter,sound)
+        }
+
+        const soundBTNArry = document.getElementsByClassName("sound-button")
+    </script>
+</body>
+</html>

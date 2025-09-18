@@ -13,15 +13,16 @@
             return new Promise((resolve, reject) =>{
                 const upperWords =[]
                 for (let i = 0; i < wordArr.length; i++) {
-                        const element = wordArr[i];
-                        if (typeof(element) !== "string"){
-                            reject("Not all of the values are strings")
+                        const letter = wordArr[i];
+                        if (typeof(letter) !== "string"){
+                           return reject("Not all of the values are strings");
                         }
-                        upperWords.push(element.toUpperCase()) 
+                        upperWords.push(letter.toUpperCase());
                 }
                 resolve(upperWords);
             });   
         }
+        // makeAllCaps("hello");
 
         function sortWords(wordArr) {
             return new Promise((resolve, reject) =>{
@@ -53,7 +54,7 @@
             .catch(error => console.log(error));
 
 
-        // 2nd daily challenge
+        // // 2nd daily challenge
 
         const morse = `{
             "0": "-----",
@@ -102,10 +103,10 @@
             "(": "-.--.",
             ")": "-.--.-"
             }`
-
+             
             function toJs(){
-                morseObj = JSON.parse(morse);
                 return new Promise((resolve, reject) => {
+                    morseObj = JSON.parse(morse);
                     if(morseObj){
                         resolve(morseObj);
                     }else{
@@ -113,10 +114,11 @@
                     }
                 });
             };
+            // toJs().then(result => console.log(result));
 
             function toMorse(morseJS){
                 const userWord = prompt("TYPE A WORD");
-                let returnedMorse = [];
+                const returnedMorse = [];
                 return new Promise((resolve, reject) =>{
                     for (let i = 0; i < userWord.length; i++) {
                         const letter = userWord[i];
