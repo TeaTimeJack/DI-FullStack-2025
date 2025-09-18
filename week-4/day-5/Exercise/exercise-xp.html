@@ -11,14 +11,72 @@
 
         const gifUrl = "https://api.giphy.com/v1/gifs/search?q=hilarious&rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My"
         
-        async function doAll(url){
+        // Exercise 1 : Giphy API
+        async function doAll1(url){
+            url = url +"&p=hilarious"
             const response = await fetch(url);
-            let data = await response.json();
-            let gifUrl  = data.data[2].images.original.url;
-            console.log(gifUrl);
-            
+                if(response.ok){
+                    let data = await response.json();
+                    let gifUrl  = data.data;
+                   console.log(gifUrl);
+                   
+                }else{
+                        throw Error("api not found by AMIT JACKSON");
+                }
         }
-        doAll(gifUrl);
+        doAll1(gifUrl)
+        // Exercise 2 : Giphy API
+        async function doAll2(url){
+            const response = await fetch(url);
+            url = url +"&p=sun"
+                if(response.ok){
+                    let data = await response.json();
+                    let gifUrl  = data.data;
+                    for (let i = 2; i < 13; i++) {
+                    const gifData = gifUrl[i];
+                    console.log(gifData);
+                    }
+                }else{
+                        throw Error("api not found by AMIT JACKSON");
+                    }
+        }
+        doAll2(gifUrl);
+
+        // Exercise 3 : Async function
+
+        fetch("https://www.swapi.tech/api/starships/9/")
+        .then(response => response.json())
+        .then(objectStarWars => console.log(objectStarWars.result));
+
+        async function doAll3() {
+            const response = await fetch("https://www.swapi.tech/api/starships/9/");
+            if(response.ok){
+                objectStarWars = await response.json()
+                console.log(objectStarWars.result);
+            }else{
+                throw Error("The Death Ball Killed All")
+            }
+        }
+
+        doAll3();
+
+        // Exercise 4: Analyze
+
+        function resolveAfter2Seconds() {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve('resolved');
+                }, 2000);
+            });
+        }
+
+        async function asyncCall() {
+            console.log('calling');
+            let result = await resolveAfter2Seconds();
+            console.log(result);
+        }
+        // it will log "calling" and 2 seconds after that it will log "resolved"
+        asyncCall();
     </script>
 </body>
 </html>
