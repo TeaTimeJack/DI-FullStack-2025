@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Sort</title>
+</head>
+<body>
+
+    <script>
+        console.log("BUBBLE SORT");
+
+        let numbers = [5,0,9,1,7,4,2,6,3,8];
+        let stringNum = numbers.toString();
+        console.log(stringNum);
+        stringNum = numbers.join("+");
+        console.log(stringNum);
+        stringNum = numbers.join(" ");
+        console.log(stringNum);
+        stringNum = numbers.join("");
+        console.log(stringNum);
+
+        //sort
+        console.log(numbers);
+            for (let i = 0; i < numbers.length; i++) {
+            let currentNum = numbers[i];
+                for (let j = i+1; j < numbers.length; j++){
+                    let numComper = numbers[j];
+                    if(currentNum < numComper){
+                        temp = currentNum
+                        numbers[i]=numComper
+                        currentNum = numbers[j]
+                        numbers[j] = temp
+                    }
+                }
+            }
+        console.log(numbers);
+        
+
+     
+        
+    </script>
+</body>
+</html>
+
+
