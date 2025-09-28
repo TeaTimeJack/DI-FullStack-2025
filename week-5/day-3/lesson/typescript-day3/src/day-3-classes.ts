@@ -28,7 +28,7 @@ class User {
 
 const userJohn = new User("john", 27, true);
 console.log(userJohn.name);
-console.log(userJohn.age);
+console.log(userJohn.getAge());
 
 
 
@@ -39,7 +39,7 @@ class Student extends User{
     }
 
     getStudentAge(): string{
-        return this.name + " is " + this.age + " years old"  //must use GETTER - privet line 5
+        return this.name + " is " + this.getAge() + " years old"  //must use GETTER - privet line 5
     }
 
     isStudentActiv():string{
