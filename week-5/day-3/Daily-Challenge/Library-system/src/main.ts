@@ -9,6 +9,19 @@ console.log("librery system amit")
 // isbn (string)
 // publishedYear (number)
 // An optional genre property (string)
+
+interface Book {
+    title: string;
+    author: string;
+    isbn: string;
+    publishedYear:number;
+    genere?: string
+}
+interface BookLibrary{
+    addBook(book: Book): void;
+    getBookDetails(isbn: string): string;
+    getBooks(): Book[]
+}
 // Class Library: Create a class Library with:
 
 // A private property books (array of Book).
@@ -16,6 +29,58 @@ console.log("librery system amit")
 // A public method getBookDetails that returns details of a book based on the isbn.
 // Class DigitalLibrary: Create a class DigitalLibrary that extends Library and adds:
 
+class Library implements BookLibrary {
+    private books: Book[]
+
+    constructor(){
+        this.books = []
+    }
+
+    addBook(book: Book): void{
+        this.books.push(book)
+    }
+
+    getBooks(): Book[]{
+        return [...this.books]
+    }
+
+    getBookDetails(isbn1:string): string{
+        const book = this.books.find((b) => b.isbn === isbn1);
+        if (book) {
+            return `${book.title} ${book.author} ${book.publishedYear} ${book.isbn} ${book?.genere}`
+        }
+        return "Book not found"
+    }
+}
 // A readonly property website (string) for the library’s website.
 // A public method listBooks that returns a list of all book titles in the library.
 // Create an instance of DigitalLibrary, add some books to it, and then print out the details of the books and the list of all book titles.
+
+class DigitalLibrary extends Library{
+    readonly website: string;
+    constructor(url: string){
+        super();
+        this.website = url;
+    }
+    listBooks(): string[] {
+        return this.getBooks().map((book) => book.title)
+    }
+}
+
+const myLibrary1 = new DigitalLibrary("http://myLibrary1.com");
+
+myLibrary1.addBook({
+    title: "The Great TS",
+    author: "Amit",
+    isbn: "123-456",
+    publishedYear: 2025,
+    genere: "softwaere"
+});
+myLibrary1.addBook({
+    title: " TS fasdfsad",
+    author: "Kevin",
+    isbn: "896-456",
+    publishedYear: 2026,
+});
+
+console.log(myLibrary1.listBooks());
