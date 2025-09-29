@@ -93,3 +93,115 @@ is_mono([2,3,3,3])
 is_mono([1,2,0,4])
 
 # ex 11 
+int_and_string_list = [1,2,"a","b","c",3,"d",4,5,"e"]
+int_arr =[]
+str_arr =[]
+for elm in int_and_string_list:
+    if isinstance(elm,int):
+        int_arr.append(elm)
+    elif isinstance(elm,str):
+        str_arr.append(elm)
+print(int_arr)
+print(str_arr)
+
+# Exercise 12
+def is_palindrome(word):
+    word_arr = list(word)
+    word_arr.reverse()
+    reverst_word = "".join(word_arr)
+    if reverst_word == word:
+        return True
+    return False
+print(is_palindrome('radar'))
+print(is_palindrome('John'))
+
+# EX 13
+
+def sum_over_k(sentence,k):
+    length_count = 0
+    word_count = 0
+    for letter in sentence:
+        if letter != " ":
+            length_count += 1
+        elif letter == " ":
+            if length_count > k:
+                word_count += 1
+            length_count = 0
+    if length_count > k:
+        word_count += 1        
+    print(word_count)
+sum_over_k('Do or do not there is no try',2)
+
+# ex 14
+
+def dict_avg(dict):
+    sum = 0
+    amount = 0
+    for val in dict.values():
+        amount += 1
+        sum += val
+    print(int(sum/amount))
+    return int(sum/amount)
+dict_avg({'a': 1,'b':2,'c':8,'d': 1})
+
+# EX 15 
+def common_div(num1, num2):
+    return_arr = []
+    smaller = 0
+    if num1 < num2:
+        smaller = num1
+    else:
+        smaller = num2
+
+    for x in range(2,smaller+1):
+        if num1%x == 0 and num2%x == 0:
+            return_arr.append(x)
+    print(return_arr)
+    return return_arr
+common_div(10,20)
+
+# ex 16
+def is_prime(num):
+    for x in range(2,num):
+        if num%x == 0:
+            return False
+    return True
+print(is_prime(11))
+
+# ex 17
+
+def weird_print(list):
+    weird_arr = [i for i in range(len(list)) if i == list[i] and i%2 == 0]
+    print(weird_arr)
+weird_print([1,2,2,3,4,5])
+
+# ex 18
+
+# def type_count(*args):
+#     return_objct = {
+#         "int":0,
+#         "str":0,
+#         "float":0,
+#         "bool":0
+#     }
+#     for argument in args:
+#         print(argument)
+#         for key in return_objct.keys():
+#             print(key)
+#             if isinstance(argument, key):
+#                 return_objct[key]+=1
+#     print(return_objct)            
+# type_count(1,'string',1.0,True,False)
+
+# ex 19
+
+
+
+# ex 20
+def convert_to_password(password):
+    return_string =""
+    for x in range(len(password)):
+        return_string+="*"
+    print(return_string)
+
+convert_to_password("mypassword")
