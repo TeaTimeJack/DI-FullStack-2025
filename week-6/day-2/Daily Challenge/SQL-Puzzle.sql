@@ -23,10 +23,10 @@
 -- SELECT * FROM SecondTab
 
 
--- q1: the OUTPUT of the following statement - () - 0
--- q2: the OUTPUT of the following statement - (h) - 2
--- q3: the OUTPUT of the following statement - () -0
--- q4: the OUTPUT of the following statement - () - 2
+-- q1: the OUTPUT of the following statement - (cant compare NULL) - 0
+-- q2: the OUTPUT of the following statement - (Sharlee,Krish) - 2
+-- q3: the OUTPUT of the following statement - (cant compare NULL) -0
+-- q4: the OUTPUT of the following statement - (Sharlee,Krish) - 2
 
    -- SELECT COUNT(*) 
    --  FROM FirstTab AS ft WHERE ft.id NOT IN ( SELECT id FROM SecondTab WHERE id IS NULL )
