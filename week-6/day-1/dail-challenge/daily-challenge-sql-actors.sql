@@ -50,5 +50,21 @@
 -- VALUES ('Matt', 'Perry', '5.11.1994', 0, False);
 -- SELECT * FROM actors
 
-UPDATE actors SET is_alive = True WHERE actor_id !=6;
+-- UPDATE actors SET is_alive = True WHERE actor_id !=6;
+-- SELECT * FROM actors
+
+-- SELECT * FROM actors
+
+-- INSERT INTO actors (first_name,last_name,date_of_birth,oscars, is_alive)
+-- VALUES ('Matt', 'Perry', '5.11.1994', 0, False);
+-- SELECT * FROM actors
+
+-- SELECT * FROM actors
+-- SELECT COUNT(*) FROM actors
+
+-- INSERT INTO actors (first_name,last_name,oscars, is_alive)
+-- VALUES ('Jack','Black', 0, True);
+
+INSERT INTO actors (first_name,last_name,date_of_birth,oscars)
+VALUES ('Jack','Black','12.2.2001', 0);
 SELECT * FROM actors
