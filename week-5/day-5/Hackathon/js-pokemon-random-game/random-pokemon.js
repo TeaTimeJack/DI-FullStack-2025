@@ -1,0 +1,83 @@
+
+
+const detailsDiv = document.getElementById("details");
+       
+        async function getPokemonInfo(pokemonNumber) {
+            const pokemonRespond = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber}`);
+            if(pokemonRespond.ok){
+                const thePokemonObjct = await pokemonRespond.json();
+                return await thePokemonObjct
+            }else{
+                throw Error("cant find the pokemon`s API");
+            }
+        }
+
+        const findButton = document.getElementById("findButton");
+        findButton.addEventListener("click", async () =>{
+            detailsDiv.innerHTML = 'loading...'
+            let randomNum = Math.floor((Math.random() * 151)+1);
+            let pokemonObjct = await getPokemonInfo(randomNum).then((result) => result);
+
+            function renderPage(objectPoke){
+                const ulElm = document.createElement("ul");
+                const liName = document.createElement('li');
+                liName.innerHTML = `<h2>${objectPoke.name}</h2>`
+                ulElm.appendChild(liName);
+
+                const liNum = document.createElement('li');
+                liNum.innerHTML = "Pokemon ID: " + objectPoke.id;
+                ulElm.appendChild(liNum);
+
+                const liHight = document.createElement('li');
+                liHight.innerHTML = "Height: " + objectPoke.height;
+                ulElm.appendChild(liHight);
+
+                const liWeight = document.createElement('li');
+                liWeight.innerHTML = "Weight: " +objectPoke.weight;
+                ulElm.appendChild(liWeight);
+
+                const liType = document.createElement('li');
+                liType.innerHTML = "Type:"
+                for (let i = 0; i < objectPoke.types.length; i++) {
+                    const aType = objectPoke.types[i];
+                    liType.innerHTML += ` ${aType.type.name}`
+                };
+                ulElm.appendChild(liType);
+                
+                const imgElm = document.createElement("img");
+                imgElm.src=objectPoke.sprites.front_default;
+            
+                detailsDiv.innerHTML = ''
+                detailsDiv.appendChild(imgElm);
+                detailsDiv.appendChild(ulElm);
+                detailsDiv.appendChild(nextButton);
+                detailsDiv.appendChild(previousButton);
+            };
+            
+            const nextButton = document.createElement("button");
+            nextButton.textContent = "Next";
+            nextButton.addEventListener("click", async ()=>{
+                if(randomNum === 151){
+                    pokemonObjct = await getPokemonInfo(1).then((result) => result);
+                    randomNum = 1;
+                }else{
+                    pokemonObjct = await getPokemonInfo(randomNum+1).then((result) => result);
+                    randomNum++;
+                }
+                renderPage(pokemonObjct);
+            });
+            const previousButton = document.createElement("button");
+            previousButton.textContent = "Previous";
+            previousButton.addEventListener("click", async ()=>{
+                if(randomNum === 1){
+                    pokemonObjct = await getPokemonInfo(151).then((result) => result);
+                    randomNum = 151;
+                }else{
+                    pokemonObjct = await getPokemonInfo(randomNum-1).then((result) => result);
+                    randomNum--;
+                }
+                renderPage(pokemonObjct);
+            });
+
+            renderPage(pokemonObjct);
+        });
