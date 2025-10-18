@@ -1,4 +1,4 @@
-const products = require('./products');
+const products = require('./products.js');
 
 console.log(products);
 function getProductDetails(productName) {

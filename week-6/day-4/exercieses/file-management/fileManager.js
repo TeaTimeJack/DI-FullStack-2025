@@ -1,7 +1,7 @@
 import fs from 'fs';
 
 export const readFile = (path) =>{
-    fs.readFile(path,'utf-8',(err,data)=>{
+    fs.readFileSync(path,'utf-8',(err,data)=>{
         if (err) {
             console.log(err.message);
             return

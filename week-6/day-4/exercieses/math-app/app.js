@@ -1,5 +1,5 @@
 const lodash = require("lodash")
-const mathObjc = require('./math');
+const mathObjc = require('./math.js');
 
 
 let numArr = [0];
