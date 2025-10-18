@@ -17,6 +17,7 @@ export const writeFile = (path,content) =>{
             console.log(err.message);
             return
         }
+        console.log("the writing was succesful");
     });
 }
 

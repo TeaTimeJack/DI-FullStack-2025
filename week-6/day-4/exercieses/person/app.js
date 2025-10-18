@@ -1,5 +1,4 @@
 import {person} from "./data.js";
-import {readFile, writeFile} from "./fileManager.js";
 
 // console.log(person);
 function avrgAge() {
@@ -16,6 +15,3 @@ function avrgAge() {
     }
 }
 avrgAge()
-
-readFile('./helloWorld.txt')
-writeFile("./byeWorld.txt", "Writing to the file")
