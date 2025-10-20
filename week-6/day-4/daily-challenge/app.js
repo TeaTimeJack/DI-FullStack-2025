@@ -1,7 +1,7 @@
 
-const obj = require("./greeting");
-const colorMsg = require("./colorful-message")
+const {greet} = require("./greeting");
+const {redMSG, greenMSG} = require("./colorful-message")
 
-console.log(obj.greet("Lital"));
-console.log(colorMsg.redMSG);
+console.log(redMSG(greet("Lital")));
+console.log(greenMSG(greet("Lital")));
  

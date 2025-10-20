@@ -1,9 +1,11 @@
 
 const chalk = require('chalk');
 
-const redMSG = chalk.red.bold('This is very RED')
+const redMSG = (msg) => chalk.red.bold(msg);
+const greenMSG = (msg) => chalk.green(msg);
 // console.log(redMSG);
 
 module.exports = {
-    redMSG
+    redMSG,
+    greenMSG
 }

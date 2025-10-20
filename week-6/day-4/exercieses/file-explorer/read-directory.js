@@ -1,9 +1,6 @@
 const fs = require('fs');
-const path = require('path');
 
-const directoryPath = path.join('file-explorer', '.');
-
-fs.readdir(directoryPath, (err, files) => {
+fs.readdir('.', (err, files) => {
     if (err) {
         console.log(err.message)
         return; 

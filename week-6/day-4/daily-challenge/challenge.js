@@ -1,8 +1,9 @@
-const greet = require('./greeting.js');
-const colorMsg = require('./colorful-message.js');
-const read = require('./files/read-file.js')
+const {greet} = require('./greeting.js');
+const {redMSG , greenMSG} = require('./colorful-message.js');
+const {readFile} = require('./files/read-file.js')
 
-console.log(greet.greet("Avner"));
-console.log(colorMsg.redMSG);
-read.readFile('./files/file-data.txt');
+
+console.log(greenMSG(greet("Avner")));
+console.log(redMSG(greet("Avner")));
+readFile('./files/file-data.txt');
  
