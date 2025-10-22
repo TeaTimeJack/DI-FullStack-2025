@@ -33,7 +33,7 @@ app.get('/api/books/:bookId', (req,res) =>{
         }
     });
     if (!book) {
-        res.sendStatus(404)
+        res.sendStatus(404).json({message: "Book not found"})
     }else{
         res.send(book)
     }

@@ -77,7 +77,7 @@ app.post('/users', (req,res) =>{
     res.send(users)
 });
 
-app.put('/users', (req,res)=>{
+app.put('/users/:id', (req,res)=>{
     const { id } = req.params;
     const { name, username, email } = req.body;
 
