@@ -26,6 +26,16 @@ const emojis = [
     {id:23, emoji: '💪', name: 'Flexed Biceps' }
 ];
 
+const score = 0 
+
+const highscores = [
+    // {
+    //     name:"Amit",
+    //     score:0
+    // }
+]
+
 module.exports = {
-    emojis
+    emojis,
+    highscores
 }

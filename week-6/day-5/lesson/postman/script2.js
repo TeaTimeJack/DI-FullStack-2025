@@ -1,6 +1,5 @@
 
 
-let score = 0;
 
 function startGame() {
   fetch("http://localhost:3069/emojis")
@@ -17,7 +16,12 @@ function startGame() {
     }
     const realEmojiIndex = Math.floor(Math.random() * emojiChoices.length);
     // console.log(emojiChoices);
-    render(emojiChoices,realEmojiIndex,score);
+    fetch("http://localhost:3069/score")
+    .then((res) => res.json())
+    .then((score) => {
+        render(emojiChoices,realEmojiIndex,score);
+    })
+    
   });
 }
 
@@ -29,7 +33,6 @@ function getRandomEmoji(emojiArr) {
 const render = (emojiChoices,realIndex,score) => {
   document.getElementById("score").innerHTML = `Score: ${score}`
   document.getElementById("startGameBtn").style.display = "none"
-  document.getElementById("formDiv").style.display = "block"
   let html = ''
   for (let i = 0; i < emojiChoices.length; i++) {
     const item = emojiChoices[i]
@@ -44,17 +47,7 @@ const render = (emojiChoices,realIndex,score) => {
    `<h2>Click the right name of this Emoji:${emojiChoices[realIndex].emoji}</h2>`
     + html;
 
-    fetch("http://localhost:3069/highscore")
-    .then((res) => res.json())
-    .then((scores) =>{
-      const highScoreList = scores.map((userScore) =>{
-        return `<div>
-          <p>Name: ${userScore.name} Score: ${userScore.score}</p>
-        </div>`;
-      });
-      document.getElementById("highScoresDiv").innerHTML = highScoreList.join("")
-    })
-
+  
 };
 
 function pickEmoji(bool) {
@@ -74,24 +67,23 @@ function pickEmoji(bool) {
 
 
 
+
 function addScore(e) {
   e.preventDefault();
+
   const name = e.target.name.value;
-  
-  fetch("http://localhost:3069/highscores", {
+
+  console.log(email, username, name);
+
+  fetch("http://localhost:3001/users", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
     },
-    body: JSON.stringify({ name, score }),
+    body: JSON.stringify({ name, username, email }),
   })
     .then((res) => res.json())
     .then((data) => {
-      // console.log("Name: "+ name +" Score: " + score);
-      // console.log(data + "Added sucsesfuly");
-      document.getElementById("highScoresDiv").style.display = "block"
-      score = 0 
-      startGame()
+      render(data);
     });
-
 }

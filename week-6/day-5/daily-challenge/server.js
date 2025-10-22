@@ -1,6 +1,6 @@
 const express = require("express")
 const cors = require('cors')
-const {emojis} = require('./database.js')
+const {emojis, highscores} = require('./database.js')
 
 const app = express();
 const PORT = 3069;
@@ -14,6 +14,12 @@ app.use(express.json());
 
 app.get('/emojis', (req,res)=>{
     res.send(emojis)
+});
+// app.get('/score', (req,res)=>{
+//     res.send(score)
+// });
+app.get('/highscore', (req,res)=>{
+    res.send(highscores)
 });
 
 app.get('/emojis/search/:name', (req,res)=>{
@@ -37,5 +43,19 @@ app.get('/emojis/:id', (req,res) =>{
     }else{
         res.send(emoji)
     }
+});
+
+// app.put("/score",(req,res)=>{
+//     let {score} = req.body
+//     score++
+//     res.send(score)
+// })
+
+app.post('/highscores', (req,res) =>{
+    // console.log(req.body);
+    const {name, score} = req.body;
+    const newScore = { name , score};
+    highscores.push(newScore)
+    res.send(highscores)
 });
 
