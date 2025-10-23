@@ -8,6 +8,7 @@ const PORT = 5001;
 app.listen(PORT, () => {
   console.log(`Users api is running on ${PORT}`);
 });
+app.use(express.json());
 
 app.use("/register", registerRouter);
 app.use("/login", loginRouter);

@@ -14,6 +14,7 @@ const register = (req, res) => {
         const newPassword = { id: hashpwd.length + 1, username, hash };
         const newUser = {
           id: users.length + 1,
+          email: "None yet",
           username,
           first_name: "None yet",
           last_name: "None yet",
