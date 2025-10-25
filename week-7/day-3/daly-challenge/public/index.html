@@ -36,25 +36,15 @@
             fetch("http://localhost:5002/users") 
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
-                // render(data);
+                // console.log(data);
             });
         };
-        fetchUsers();
+        // fetchUsers();
         
-
-        // const render = (arr) => {
-        // const html = arr.map((item) => {
-        //     return `<p>${item.id} # ${item.first_name} # ${item.last_name} # ${item.username} # ${item.email} </p>`;
-        // });
-
-        // document.getElementById("responsDiv").innerHTML = html.join("");
-        // };
-
         function registerUser(e) {
             e.preventDefault();
-            const firstName = e.target.firstName.value;
-            const lastName = e.target.lastName.value;
+            const first_name = e.target.firstName.value;
+            const last_name = e.target.lastName.value;
             const email = e.target.email.value;
             const username = e.target.username.value;
             const password = e.target.password.value;
@@ -64,27 +54,38 @@
                 headers: {
                 "Content-type": "application/json",
                 },
-                body: JSON.stringify({ firstName, lastName, email, username, password }),
+                body: JSON.stringify({ first_name, last_name, email, username, password }),
             })
-                .then((res) => res.json())
-                .then((data) => {
-                        console.log(data); 
-                    if (data.message === "Registration Complete!") {
-                        document.getElementById("responsDiv")
-                         .innerHTML = '<p style="color: green;">Registration Complete!</p>';
-                    }else if (data.message === "This username already exists"){
-                         document.getElementById("responsDiv")
-                         .innerHTML = '<p style="color: red;">This user already exists. Please choose a different username.</p>';
+                .then((res) =>  {
+                    if(res.ok){
+                        return res.json()
                     }else{
-                        document.getElementById("responsDiv")
-                         .innerHTML = '<p style="color: orange;">An unknown error occurred during registration.</p>';
+                        return res.json().then(errorData => {
+                            throw new Error(errorData.message || `HTTP error! Status: ${res.status}`);
+                        });
+                    } 
+                })
+                .then((data) => {
+                        // console.log(data); 
+                        const responseDiv = document.getElementById("responsDiv");
+                    if (data.message === "Registration Complete!") {
+                         responseDiv.innerHTML = '<p style="color: green;">Registration Complete!</p>';
+                    }else if (data.message === "This username already exists"){
+                         responseDiv.innerHTML = '<p style="color: red;">This user already exists. Please choose a different username.</p>';
+                    }else{
+                        responseDiv.innerHTML = '<p style="color: orange;">An unknown error occurred during registration.</p>';
                     }
-                    fetchUsers();
+                    // fetchUsers();
                 })
                 .catch((err) =>{
-                    console.log(err);
+                    console.error("Fetch/Server Error:", err);
+                    
+                    const displayMessage = err.message.includes("Could not connect") 
+                        ? "Could not connect to the server. Please try again later."
+                        : `An error occurred: ${err.message}`;
+
                     document.getElementById("responsDiv")
-                        .innerHTML = '<p style="color: red;">Could not connect to the server. Please try again later.</p>';
+                    .innerHTML = `<p style="color: red;">${displayMessage}</p>`;
                 });
             }
 
