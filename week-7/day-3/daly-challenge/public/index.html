@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1 >Register:</h1>
+    <h4>Or <a href="./loginForm.html">LOGIN</a> if you already have an accunt.</h4>
 
     <form onsubmit="registerUser(event)">
        <label for="firstName"> First Name: </label>
@@ -71,16 +72,14 @@
                     if (data.message === "Registration Complete!") {
                         document.getElementById("responsDiv")
                          .innerHTML = '<p style="color: green;">Registration Complete!</p>';
-                         fetchUsers();
                     }else if (data.message === "This username already exists"){
                          document.getElementById("responsDiv")
                          .innerHTML = '<p style="color: red;">This user already exists. Please choose a different username.</p>';
-                         fetchUsers();
                     }else{
                         document.getElementById("responsDiv")
                          .innerHTML = '<p style="color: orange;">An unknown error occurred during registration.</p>';
-                         fetchUsers();
                     }
+                    fetchUsers();
                 })
                 .catch((err) =>{
                     console.log(err);

@@ -4,22 +4,29 @@ const bcrypt = require("bcrypt");
 
 const tryLogin = (req, res) => {
   const { username, password } = req.body;
-  const paswordIndex = hashpwd.findIndex((user) => user.username === username);
-  const usernameIndex = users.findIndex((user) => user.username === username);
-  if (paswordIndex === -1 || usernameIndex === -1) {
-    res.json({ messege: "This Username does not exist!" });
+  const userIndex = hashpwd.findIndex((user) => user.username === username);
+  if (userIndex === -1) {
+    res.json({ message: "This Username does not exist!" });
   } else {
-    bcrypt.compare(password, hashpwd[paswordIndex].password, (err, result) => {
+    const hashedPassword = hashpwd[userIndex].password;
+    bcrypt.compare(password, hashedPassword, (err, result) => {
       if (result) {
         res.json({
-          messege: "Log in Succesful!",
-          userInfo: users[usernameIndex],
+          message: "Log in Succesful!",
+          userInfo: users[userIndex],
         });
       } else {
-        res.json({ messege: "Your password is incorrect - try again." });
+        res.json({ message: "Your password is incorrect - try again." });
       }
     });
   }
 };
 
-module.exports = tryLogin;
+const getUsersPassword = (req, res) => {
+  res.json(hashpwd);
+};
+
+module.exports = {
+  tryLogin,
+  getUsersPassword,
+};
