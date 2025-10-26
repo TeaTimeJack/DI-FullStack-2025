@@ -6,37 +6,13 @@ const {
   getUserByUsernameDB,
 } = require("../models/user-models.js");
 
-// const register = (req, res) => {
-//   const { first_name, last_name, email, username, password } = req.body;
-//   getUserByUsernameDB(username)
-//     .then((rows) => {
-//       if (rows.length === 0) {
-//         bcrypt.hash(password, saltRounds, (err, hash) => {
-//           if (err) {
-//             console.log(err);
-//           } else {
-//             insertHashPassword(username, hash);
-//             insertNewUser(email, username, first_name, last_name);
-//             res.json({ message: "Registration Complete!" });
-//           }
-//         });
-//       } else {
-//         res.json({ message: "This username already exists" });
-//       }
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res
-//         .status(500)
-//         .json({ message: "Something went wrong with the server or database." });
-//     });
-// };
-
 const register = async (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const { first_name, last_name, email, username, password } = req.body;
   if (!username || !password) {
-    return res.status(400).json({ message: "All fields are required." });
+    return res
+      .status(400)
+      .json({ message: "UserName And Password fields are required." });
   }
 
   try {

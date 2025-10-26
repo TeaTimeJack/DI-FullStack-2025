@@ -56,15 +56,7 @@
                 },
                 body: JSON.stringify({ first_name, last_name, email, username, password }),
             })
-                .then((res) =>  {
-                    if(res.ok){
-                        return res.json()
-                    }else{
-                        return res.json().then(errorData => {
-                            throw new Error(errorData.message || `HTTP error! Status: ${res.status}`);
-                        });
-                    } 
-                })
+                .then((res) => res.json())
                 .then((data) => {
                         // console.log(data); 
                         const responseDiv = document.getElementById("responsDiv");

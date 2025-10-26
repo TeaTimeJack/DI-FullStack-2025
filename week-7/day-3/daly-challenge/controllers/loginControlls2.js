@@ -5,38 +5,6 @@ const {
 const { getUserByUsernameDB } = require("../models/user-models.js");
 const bcrypt = require("bcrypt");
 
-// const tryLogin = async (req, res) => {
-//   const { username, password } = req.body;
-//   if (!username || !password) {
-//     return res.status(400).json({ message: "All fields are required." });
-//   }
-
-//   try {
-//     const existingUsers = await getUserByUsernameDB(username);
-//     if (existingUsers.length === 0) {
-//        res.json({ message: "This Username does not exist!" });
-//     }
-//     const hashedPassword = await getPasswordByUsernameDB(username);
-//     bcrypt.compare(password, hashedPassword, (err, result) => {
-//       if (result) {
-//          res.json({
-//           message: "Log in Succesful!",
-//           userInfo: existingUsers,
-//         });
-//       } else {
-//          res.json({ message: "Your password is incorrect - try again." });
-//       }
-//     });
-//   } catch (err) {
-//     console.log("Registration Error:", err);
-//     res
-//       .status(500)
-//       .json({ message: "Something went wrong with the server or database." });
-//   }
-// };
-
-// module.exports = tryLogin;
-
 const bcryptComparePromise = (password, hash) => {
   return new Promise((resolve, reject) => {
     bcrypt.compare(password, hash, (err, result) => {

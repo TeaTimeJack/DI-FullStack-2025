@@ -10,12 +10,6 @@ const getAllUsersDB = () => {
   );
 };
 
-// const getUserByIdDB = (id) => {
-//   return db("users")
-//     .select("id", "email", "username", "first_name", "last_name")
-//     .where({ id });
-// };
-
 const getUserByUsernameDB = (username) => {
   return db("users")
     .select("email", "username", "first_name", "last_name")
@@ -28,7 +22,6 @@ const insertNewUser = (email, username, first_name, last_name) => {
 
 module.exports = {
   getAllUsersDB,
-  //   getUserByIdDB,
   getUserByUsernameDB,
   insertNewUser,
 };

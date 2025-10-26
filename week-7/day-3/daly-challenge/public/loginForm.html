@@ -31,7 +31,6 @@
                 // render(data);
             });
         };
-
         function fetchPasswordUsers() {
             fetch("http://localhost:5002/login") 
             .then((res) => res.json())
@@ -40,7 +39,7 @@
                 // render(data);
             });
         };
-        fetchPasswordUsers()
+        // fetchPasswordUsers()
         function loginUser(e) {
             e.preventDefault();
             const username = e.target.username.value;
