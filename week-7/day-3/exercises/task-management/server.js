@@ -66,7 +66,7 @@ app.put("/tasks/:id", (req, res) => {
     if (idIndex === -1) {
       res.json({ message: "There is no Task with this ID" });
     } else {
-      const updateTask = tasks[idIndex];
+      let updateTask = tasks[idIndex];
       updateTask = { ...updateTask, taskName, isCompleted };
       tasks[idIndex] = updateTask;
       const updatedData = JSON.stringify(tasks, null, 2);
