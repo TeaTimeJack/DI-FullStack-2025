@@ -1,7 +1,13 @@
 
 const UserFavoriteAnimals = (props) =>{
-   const {animal} = props
-   return (<li>{animal}</li>)
+   
+   return (
+      <ul>
+         {props.animals.map((item, index) =>{
+            return (<li key = {index}><span>{item}</span></li>)
+         })}
+      </ul>
+   )
 }
 
 export default UserFavoriteAnimals

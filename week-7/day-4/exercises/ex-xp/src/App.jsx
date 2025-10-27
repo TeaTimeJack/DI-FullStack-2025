@@ -18,11 +18,7 @@ function App() {
       <p>React is {sum} times better with JSX</p>
       <h3>{user.firstName}</h3>
       <h3>{user.lastName}</h3>
-      <ul>
-        {user.favAnimals.map((item, index)=>{
-          return <UserFavoriteAnimals animal={item} key={index}/>
-        })}
-      </ul>
+      <UserFavoriteAnimals animals={user.favAnimals}/>
       <Exercise />
       
     </>
