@@ -11,7 +11,7 @@ function App() {
       {name: "Java", votes: 0}
     ])
 
-    const add = ()=>{   
+    const add = (i)=>{   
         const newLanguages = [...languages]; 
 
         newLanguages[i] = {...newLanguages[i], votes: newLanguages[i].votes + 1 };
@@ -37,7 +37,7 @@ function App() {
           }>
           <div style={{color:"black"}}><h3>{lan.votes}</h3></div>
           <div style={{color:"black"}}>{lan.name}</div>
-          <button onClick={add}>Click Here</button>
+          <button onClick={()=>add(index)}>Click Here</button>
         </div>
         )
       })}
