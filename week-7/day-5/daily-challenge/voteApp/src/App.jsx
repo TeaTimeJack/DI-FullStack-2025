@@ -13,9 +13,7 @@ function App() {
 
     const add = (i)=>{   
         const newLanguages = [...languages]; 
-
-        newLanguages[i] = {...newLanguages[i], votes: newLanguages[i].votes + 1 };
-
+        newLanguages[i].votes++
         setLanguages(newLanguages);
     }
 
