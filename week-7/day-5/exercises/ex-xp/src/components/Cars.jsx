@@ -1,4 +1,5 @@
 import {useState} from "react"
+import Garage from "./Garage"
 
 const Cars = (props) =>{
     const {name, model} = props.info
@@ -10,6 +11,7 @@ const Cars = (props) =>{
             <h3>name: {name}</h3>
             <p>model: {model}</p>
             <p>color: {color}</p>
+            <Garage size ="small" />
         </> 
         )
                  
@@ -18,6 +20,7 @@ const Cars = (props) =>{
         <>
             <p>name: {carInfo.name}</p>
             <p>model: {carInfo.model}</p>
+            <Garage size ="small" />
         </>
     )
 }

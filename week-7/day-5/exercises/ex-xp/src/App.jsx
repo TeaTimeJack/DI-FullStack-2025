@@ -13,7 +13,6 @@ function App() {
   return (
     <>
       <Cars info = {carInfo} />
-      <Garage size ="Big" />
       <Events />
       <Phone />
       <Color />
