@@ -22,15 +22,39 @@ const Form = () => {
           .catch((err)=>{
               console.log(`Ther was an error in Fetch-Post: ${err}`);
           })
-          return <h3>Hello From Express</h3>
+         
       }catch (error) {
-          console.log(`Ther was an error in TRY-Post: ${error}`);
-          return <h3>Hello From Express</h3>
-          
+          console.log(`Ther was an error in TRY-Post: ${error}`)  
       }
     }
 
-    
+    // const submitForm = async (e) => {
+    //     e.preventDefault();
+        
+    //     const inputValue = e.target.input.value;
+    //     setTheInput(inputValue); 
+        
+    //     try {
+    //         const dataToSend = { input: inputValue };
+    //         const response = await fetch("http://localhost:3802/api/world", {
+    //             method: "POST",
+    //             headers: { "Content-Type": "application/json" },
+    //             body: JSON.stringify(dataToSend) 
+    //         });
+
+    //         if (!response.ok) {
+    //             console.error(`HTTP error! Status: ${response.status}`);
+    //         }
+    //         const data = await response.json();
+    //         setOutputMessage(`I received your POST request. This is what you sent me: ${theInput}`);
+
+    //     } catch (error) {
+    //         console.error(`There was an error in Fetch-Post: ${error.message}`);
+    //         setOutputMessage(`Error: ${error.message}. Check console.`);
+    //     }
+        
+    // };
+
 
   return (
     <div>
@@ -39,7 +63,7 @@ const Form = () => {
         <input name="input" />
         <input type="submit"/>
       </form>
-        {theInput? <Output input = {theInput} />: null}
+        {theInput? <Output message ={theInput} />: null}
     </div>
   )
 }
