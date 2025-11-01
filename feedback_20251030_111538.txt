@@ -1,0 +1,43 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-2/exercises/ex-xp/src/App.jsx
+suggestions for improvement:
+- The code should implement the ErrorBoundary component as a class component with componentDidCatch() to handle errors.
+- The code should use React Router's NavLink component for navigation.
+- The code should include a ShopScreen component that throws an error for demonstrating the error boundary.
+- The code should create a JSON file and display the data in the PostList component.
+- The code should create components to display data from a complex JSON structure.
+- The code should include functionality to POST JSON data to a webhook URL.
+Correctness: 0%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-2/exercises/ex-xp/src/helpers/ErrorBoudary.jsx
+suggestions for improvement:
+- The component is named `ErrorBoudary` instead of `ErrorBoundary` which is a typo.
+- The `componentDidCatch` method is correctly implemented to handle errors, but it's missing the `setState` call. While `getDerivedStateFromError` is present, using both `getDerivedStateFromError` and `componentDidCatch` to update the state is generally redundant.  `componentDidCatch` should be the primary place to handle side effects like logging errors.
+- Consider adding more specific error handling or logging within the `componentDidCatch` method.
+Correctness: 25%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-2/exercises/ex-xp/src/components/Experiences.jsx
+suggestions for improvement:
+- Consider adding error handling for image loading.
+- Destructure props for better readability (though not applicable in this example since there are no props).
+- Move the 'No Image Available' alt text to a constant for reusability and consistency.
+Correctness: 70%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-2/exercises/ex-xp/src/components/PostList.jsx
+suggestions for improvement:
+- Ensure your JSON file is correctly placed within your project structure so the import path works correctly.
+- Consider adding some styling to improve visual presentation.
+Correctness: 50%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-2/exercises/ex-xp/src/components/Skills.jsx
+suggestions for improvement:
+- This code snippet appears to be related to Exercise 3, specifically the `Example2` component, however, it is impossible to grade without the full context of the other files and the specific way it's being utilized within the application.
+- Without knowing where this code is being used, there is no way to verify its correctness to the described task.
+Correctness: 0%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-2/exercises/ex-xp/src/components/SocialMedias.jsx
+suggestions for improvement:
+- Ensure that all components (Example1, Example2, Example3) are implemented according to the instructions in Exercise 3, including displaying the correct data and using keys for mapped elements.
+- Complete the implementation of Example2 and Example3 components as they are missing from the provided code.  These components should properly display the Skills and Experiences data from the JSON file, respectively.
+- Make sure the components are imported and rendered in `App.js`.
+Correctness: 50%
+-----
