@@ -1,0 +1,7 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-7/day-5/exercises/ex-xp/src/App.jsx
+suggestions for improvement:
+- The App component should only render the Car component initially and then progressively integrate the other components as the exercises evolve.
+- The Garage component is receiving a size prop that is not 'small' as requested in Exercise 1, Part III.
+- The feedback should focus on correctness. The readability, security, and performance are fine as is.
+Correctness: 0%
+-----
