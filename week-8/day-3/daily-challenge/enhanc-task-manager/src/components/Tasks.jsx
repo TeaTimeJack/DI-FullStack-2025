@@ -1,8 +1,19 @@
-import React ,{useContext, useState} from 'react'
+import React ,{useContext, useState, useRef} from 'react'
 import {TasksContext} from "../App"
 
 const Tasks = () => {
-    const {tasks , machingTasks, completeTask, deleteTask,editTask} = useContext(TasksContext)
+    const {tasks , machingTasks, completeTask, deleteTask,editTask,setTasks,setMachingTasks} = useContext(TasksContext)
+    const editRef = useRef(null);
+    const saveEditTask =(id)=>{
+        if(editRef.current){
+            const tempTasks = [...tasks]
+            const indexOfId = tempTasks.findIndex((task) => task.id === id)
+            tempTasks[indexOfId].name = editRef.current.value;
+            tempTasks[indexOfId].isEditing = !tempTasks[indexOfId].isEditing
+            setTasks(tempTasks)
+            setMachingTasks(tasks)
+        }
+    }
   return (
     <div>
         <h4>List of Tasks:</h4>
@@ -22,7 +33,7 @@ const Tasks = () => {
                     ):(
                         <>
                         <td>
-                            <input id={`edit-task-${task.id}`} type="text" />
+                            <input ref={editRef} id={`edit-task-${task.id}`} type="text" placeholder={task.name}/>
                         </td>
                         <td>
                             <button onClick={()=>saveEditTask(task.id)}>Save Name</button>

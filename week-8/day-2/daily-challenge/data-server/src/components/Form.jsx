@@ -10,7 +10,7 @@ const Form = () => {
         setTheInput(e.target.input.value)
 
         try{
-          fetch("localhost:3802/api/world",{
+          fetch("http://localhost:3802/api/world",{
             method: "POST",
             headers:{"Content-Type": "application/json"},
             body: JSON.strigify(theInput)

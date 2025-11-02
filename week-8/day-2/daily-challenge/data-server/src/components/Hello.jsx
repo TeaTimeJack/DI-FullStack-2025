@@ -3,7 +3,7 @@ import React from 'react'
 const Hello = () => {
 
     try{
-        fetch("localhost:3802/api/hello")
+        fetch("http://localhost:3802/api/hello")
         .then((res) =>res.json())
         .then((data)=>{
             return <h3>{data.message}</h3>

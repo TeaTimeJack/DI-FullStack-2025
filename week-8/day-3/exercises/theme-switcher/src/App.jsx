@@ -8,9 +8,9 @@ function App() {
   
   const [darkMode, setDarkMode] = useState(false)
   const [themeStyle, setThemeStyle] = useState("lightMode");
-  const [rootElm, setRootElm] = useState(document.getElementById("root"))
+  
 
-  rootElm.className = themeStyle;
+  document.body.className = themeStyle;
 
   const switchTheme = () =>{
     setDarkMode(!darkMode)
@@ -19,12 +19,11 @@ function App() {
     }else{
       setThemeStyle("lightMode");
     }
-    rootElm.className = themeStyle;
   }
   
   return (
     <>
-    <ThemeContext value={{switchTheme, themeStyle}}>
+    <ThemeContext value={{switchTheme}}>
         <Switcher />
     </ThemeContext>
     <br/>

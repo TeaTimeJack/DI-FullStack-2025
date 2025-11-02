@@ -90,7 +90,7 @@ function App() {
     <>
     <div>
       <h1>Tasks Maneger</h1>
-      <TasksContext value = {{tasks, machingTasks, filterTasks, completeTask, deleteTask, editTask, showAll, showActive, showCompleted}} >
+      <TasksContext value = {{tasks, machingTasks, filterTasks, completeTask, deleteTask, editTask, showAll, showActive, showCompleted,setTasks,setMachingTasks}} >
         <Search />
         <Tasks />
       </TasksContext>
