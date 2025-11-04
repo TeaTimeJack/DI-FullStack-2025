@@ -1,0 +1,17 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-7/day-4/exercises/ex-xp/src/App.jsx
+suggestions for improvement:
+- Consider adding PropTypes to the UserFavoriteAnimals component to define the expected type of the `animals` prop.
+- For better performance in lists, ensure that the `key` prop passed in the `UserFavoriteAnimals` component is truly unique and stable across renders.
+Correctness: 100%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-7/day-4/exercises/ex-xp/src/UserFavoriteAnimals.jsx
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-7/day-4/exercises/ex-xp/src/Exercise3.jsx
+suggestions for improvement:
+- Consider adding alt text to the image for better accessibility.
+- For the form, ensure proper handling of user input and validation to prevent security vulnerabilities in a real-world application, though this is beyond the explicit requirements of the exercise.
+Correctness: 100%
+-----

@@ -1,0 +1,7 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-1/daily-challenge/react-form-container/src/App.jsx
+suggestions for improvement:
+- Implement the `handleSubmit` function to construct the URL with the form data and redirect the user to that URL on submit.  Currently, the `handleSubmit` function is commented out and doesn't create the URL as specified in the instructions.
+- Instead of individual state variables for each input, consider using a single state object to manage the form data. This can simplify the `handleChange` function and make the code more maintainable.
+- The checkbox inputs all have the same name (`yesno`). This is not correct and will make it impossible to distinguish between the checkboxes. Each checkbox needs a unique name to be properly handled by the form.
+Correctness: 60%
+-----
