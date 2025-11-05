@@ -34,11 +34,13 @@ export const todoReducer =(state = initialState, action)=>{
         return {...state, todos: tempTodo } 
       }else if(action.type === REMOVE_TO_DO){
         console.log(state.todos);
+        const temoTodos =[...state.todos]
         console.log("trying to remove...");
         const removeIndex = state.todos.findIndex(todo => todo.id === action.payload)        
-        state.todos.splice(removeIndex,1)
+        temoTodos.splice(removeIndex,1)
         console.log(state.todos);
-        return {...state, todos: state.todos } 
+        console.log(temoTodos);
+        return {...state, todos: temoTodos } 
         
       }else if(action.type === CHANGE_COMPLETE){
         const tempTodo = state.todos
