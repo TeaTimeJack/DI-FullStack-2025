@@ -15,7 +15,7 @@ const SocialMedias = () => {
           })}
       </ul>
     </div>
-    <Skill />
+    <Skills />
     <Experiences />
     </>
     
