@@ -1,0 +1,16 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-9/day-2/exercises/ex-xp/src/App.jsx
+suggestions for improvement:
+- The reducer directly modifies the state, which violates immutability. Use methods like `map` and `filter` to create new arrays/objects instead of mutating the existing ones. This is a critical Redux principle.
+- The `ADD_TO_DO` action is pushing to the state array and then reassigning it to a variable tempTodo. This not how Javascript works. the .push() method returns the length of the array not the array itself. You should return a new array using the spread operator.
+- The reducer logic can be improved by using more descriptive variable names and avoiding unnecessary temporary variables, enhance code clarity. Using the spread operator to create new state will also improve readability.
+Correctness: 60%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-9/day-2/exercises/ex-xp/src/components/Tasks.jsx
+suggestions for improvement:
+- The `REMOVE_TO_DO` action isn't being dispatched on the delete button, only `CHANGE_COMPLETE`.
+- The `payload` being passed to the `CHANGE_COMPLETE` and `REMOVE_TO_DO` actions should likely be the `id` not `name`
+- The `editRef` functionality is not fully implemented.
+- Consider moving the table styling to a CSS file or using a styling library for better maintainability.
+- The component could be split into smaller, more focused components (e.g., a `Task` component) to improve readability and maintainability.
+Correctness: 50%
+-----

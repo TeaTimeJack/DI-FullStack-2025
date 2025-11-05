@@ -1,0 +1,33 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-2/daily-challenge/server/server.js
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-2/daily-challenge/data-server/src/App.jsx
+suggestions for improvement:
+- The code only imports components Hello and Form, but does not implement any of the logic specified in the instructions, such as fetching data from the /api/hello route in componentDidMount, creating a form, and posting data to the /api/world route. The code also lacks the server-side implementation in server.js.
+Correctness: 0%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-2/daily-challenge/data-server/src/components/Hello.jsx
+suggestions for improvement:
+- The component attempts to fetch data, but the way it's implemented, it will not work as intended. The 'try-catch' block contains a fetch request that is not properly awaited or managed within the React component lifecycle.  It also returns a hardcoded header regardless of the fetch result.
+- The commented-out code shows an attempt to use `async await` correctly, but it's commented out and not properly integrated into the component's return value.
+- The component should use `useEffect` hook to perform the fetch operation when the component mounts.
+- The URL 'localhost:3802/api/hello' is missing the 'http://' or 'https://' protocol. This might cause issues with the fetch request.
+- The `.then((res) =>res.json())` can be simplified to `.then(res => res.json())`
+Correctness: 0%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-2/daily-challenge/data-server/src/components/Form.jsx
+suggestions for improvement:
+- The server address in the fetch request is missing 'http://'.
+- The 'body' of the fetch request needs to be a JSON object with a key-value pair. Currently, it's just stringifying the input value directly.
+- The response from the server is not being handled correctly. The code attempts to render an `<Output>` component directly within the `.then()` block of the fetch request, which is incorrect React syntax.  You should update state to trigger a re-render.
+- Error handling can be improved by providing more informative messages to the user.
+- The commented-out code contains a more complete (and partially correct) implementation, which could be used as a starting point with adjustments.
+Correctness: 50%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-2/daily-challenge/data-server/src/components/Output.jsx
+suggestions for improvement:
+- This component only renders a paragraph, but it is only a small part of the overall functionality described in the problem. Consider showing the React component file that consumes the data sent by the Express server.
+Correctness: 0%
+-----

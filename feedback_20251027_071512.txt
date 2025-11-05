@@ -1,0 +1,11 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-7/day-4/daily-challeng/dailyChallenge/src/Carousel.jsx
+suggestions for improvement:
+- Consider using a more descriptive component name than `DemoCarousel`. A name like `CityCarousel` or `TravelCarousel` would better reflect the component's purpose.
+- For larger applications, consider separating the carousel's data (image URLs and legends) into a separate configuration file or fetching it from an API. This would improve maintainability and flexibility.
+Correctness: 100%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-7/day-4/daily-challeng/dailyChallenge/src/App.jsx
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----

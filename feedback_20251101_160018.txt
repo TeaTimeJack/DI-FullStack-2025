@@ -1,0 +1,23 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-3/daily-challenge/enhanc-task-manager/src/App.jsx
+suggestions for improvement:
+- Implement the task editing functionality using useRef as suggested in the instructions to directly manipulate the DOM and avoid unnecessary re-renders.
+- Consider using useReducer for managing the state, especially with the addition of filtering and editing functionalities, as suggested in the prompt. This will make state management more predictable and easier to debug.
+- Avoid directly mutating the state when updating tasks. Create a new array with the updated task instead. This improves immutability and can prevent unexpected side effects.
+- The `setMachingTasks(tasks)` after updating tasks in functions like `completeTask` and `deleteTask` may not reflect the changes if the state update is not immediately applied. It is better to update `machingTasks` based on the new `tasks` state.
+Correctness: 70%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-3/daily-challenge/enhanc-task-manager/src/components/Search.jsx
+suggestions for improvement:
+- The filterTasks function should handle the input change event to filter tasks based on the task name. Ensure the filtering logic is correctly implemented within the context and reducer.
+- Consider debouncing the input change event in the filterTasks function to improve performance, especially with larger task lists.
+- The `showAll`, `showActive`, and `showCompleted` functions are expected to be defined in the context and used to filter based on the completion status. Verify that these functions are correctly implemented in the reducer and context provider.
+Correctness: 70%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-3/daily-challenge/enhanc-task-manager/src/components/Tasks.jsx
+suggestions for improvement:
+- Implement useRef to manage the input field for editing tasks, as suggested in the instructions. Currently, there's no state or ref being used to control the input value, so the edits won't be tracked.
+- The `saveEditTask` function is called but not defined in the provided code. This function needs to be implemented to update the task's name in the context.
+- Filtering is mentioned in the instructions, but no filtering functionality is implemented in the provided `Tasks` component. Consider adding buttons or a select element to filter tasks based on their completion status within this component.
+- The instructions suggest actions for editing and filtering tasks, so ensure that the `TasksContext` provides the necessary actions and state for filtering.
+Correctness: 70%
+-----
