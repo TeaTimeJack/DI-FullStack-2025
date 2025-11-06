@@ -1,0 +1,7 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-2/exercises/ex-xp/src/App.jsx
+suggestions for improvement:
+- Complete exercises 1 and 3. Currently, the code partially addresses exercise 1 (router and error boundary structure are set up) but is missing Bootstrap integration and the specific content for each route (especially the error in the Shop component). Exercise 3 is also incomplete, only the SocialMedias component is rendered, while Skills and Experiences are commented out. Exercise 4 is missing entirely.
+- In Exercise 1, consider using NavLink from React Router for better active link styling and accessibility.
+- For better organization, separate the component definitions into their own files. Keep the main App.js focused on routing and top-level structure.
+Correctness: 60%
+-----
