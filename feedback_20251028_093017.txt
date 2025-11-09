@@ -1,0 +1,6 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-7/day-5/daily-challenge/voteApp/src/App.jsx
+suggestions for improvement:
+- Consider extracting the language item rendering into a separate component for better organization and reusability.
+- The inline styles, while functional, could be moved to a CSS file for better maintainability.
+Correctness: 100%
+-----

@@ -1,0 +1,17 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-3/exercises/ex-xp-1/src/App.jsx
+suggestions for improvement:
+- The code implements a task manager, which is unrelated to the exercises provided in the chapter content.
+- The code can improve its readability by adding comments
+Correctness: 0%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-3/exercises/ex-xp-1/src/components/Search.jsx
+suggestions for improvement:
+- This component implements a search and filter functionality, which is not described in the Chapter Content/Questions. The exercises are about theme switching, character counting, and todo list management using specific hooks.
+- The code uses useContext but not to implement the Theme Switcher as requested by exercise 1. It does not use useRef for character counting (exercise 2) or useReducer for todo list management (exercise 3).
+Correctness: 0.0%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-3/exercises/ex-xp-1/src/components/Tasks.jsx
+suggestions for improvement:
+- This code appears to be a component for displaying and managing tasks within a larger application, likely a task management or todo list app.  However, it doesn't directly address any of the specific exercises presented in the chapter content, which focus on theme switching with `useContext`, character counting with `useRef`, and todo list management with `useReducer`. Because of this irrelevance to the prompt, the correctness score must be 0.
+Correctness: 0%
+-----
