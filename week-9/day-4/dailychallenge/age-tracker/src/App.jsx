@@ -3,6 +3,7 @@ import {useSelector, useDispatch, Provider} from 'react-redux'
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import './App.css'
+import  AgeTrackerApp  from "./Aisulution";
 
 
 const ageUpAsync = createAsyncThunk("ageUp/async", setTimeout(()=>{
@@ -101,6 +102,7 @@ function App() {
       <h2>Age: {age}</h2>
       <button onClick={handleClickUp}>Age Up</button>
       <button onClick={handleClickDown}>Age Down</button>
+      <AgeTrackerApp />
       </>
    
   )
