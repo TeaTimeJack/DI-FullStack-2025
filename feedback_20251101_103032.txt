@@ -1,0 +1,19 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-1/exercises/ex-xp/src/helpers/ErrorBoundary.jsx
+suggestions for improvement:
+- Add error details and component stack info to the error message displayed by the ErrorBoundary, as suggested by the provided code snippet in Exercise 1.
+- Consider adding a button or mechanism to reset the error boundary and try rendering the children again, improving user experience.
+Correctness: 50%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-1/exercises/ex-xp/src/App.jsx
+suggestions for improvement:
+- The `BuggyCounter` and `ErrorBoundary` components are missing, making it impossible to fully evaluate the correctness of the simulation.
+- The Lifecycle exercises are not addressed in the provided code.  You need to implement the `shouldComponentUpdate`, `componentDidUpdate`, and `getSnapshotBeforeUpdate` methods as described in Exercise 2, and address Exercise 3.
+Correctness: 75%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-1/exercises/ex-xp/src/BuggyCounter.jsx
+suggestions for improvement:
+- The code is a good start for the BuggyCounter component, but it needs to be integrated with an ErrorBoundary component as described in Exercise 1 to fully address the problem.
+- The ErrorBoundary component itself is missing, so the error handling functionality is incomplete.
+- Consider adding prop validation to the component.
+Correctness: 50%
+-----
