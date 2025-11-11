@@ -1,0 +1,27 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-3/exercises/theme-switcher/src/App.css
+suggestions for improvement:
+- The provided code snippet is CSS, not React code, and does not implement the exercises as described in the prompt. The exercises require React components and the use of hooks like `useContext`, `useState`, `useRef`, and `useReducer` to build interactive elements.
+- The provided CSS defines classes for dark and light modes, which are intended to be used in conjunction with the React components described in exercise 1, but it does not on its own fulfill the requirements of any of the exercises.
+Correctness: 0.0%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-3/exercises/theme-switcher/src/App.jsx
+suggestions for improvement:
+- The ThemeContext should be used as a provider. Currently, it is being passed a value prop directly.
+- The logic for switching themes can be simplified.
+- Accessing the document element directly within a React component is generally discouraged. Consider using state and CSS classes to control the theme.
+Correctness: 0%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-3/exercises/theme-switcher/src/Switcher.jsx
+suggestions for improvement:
+- The code snippet is incomplete. It needs to be part of a larger application to be functional.
+- The `switchTheme` function is assumed to be available via context, but the context provider and its implementation are missing from this snippet.
+- The code doesn't implement the full theme switching functionality, only the button to trigger it. The context and the logic to toggle the theme are expected to be in the `App.js` file.
+- To make the code complete you need to see the App.js file that has context logic in it.
+Correctness: 0%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-3/exercises/theme-switcher/src/CharacterCounter.jsx
+suggestions for improvement:
+- Consider adding a `maxlength` attribute to the input element to limit the number of characters a user can type. This can improve the user experience and prevent potential issues with extremely long inputs.
+- For enhanced readability, add comments to explain the purpose of `inputRef` and `charCount`.
+Correctness: 100%
+-----

@@ -1,0 +1,6 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-9/day-4/exercises/ex-xp-thunk/src/App.jsx
+suggestions for improvement:
+- Consider moving the API URL to a config file or environment variable.
+- The empty object destructuring from `usersSlice.actions` could be removed for cleaner code.
+Correctness: 100%
+-----

@@ -1,0 +1,6 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-8/day-4/daily-challenge-calculator/src/App.jsx
+suggestions for improvement:
+- Consider adding the division operation to fully address the bonus requirement.
+- Implement some form of error handling to avoid NaN when dividing by zero.
+Correctness: 80%
+-----
