@@ -1,0 +1,29 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-10/day-1/exercises/ex-xp-ts/src/App.tsx
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-10/day-1/exercises/ex-xp-ts/src/Greeting.tsx
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-10/day-1/exercises/ex-xp-ts/src/Counter.tsx
+suggestions for improvement:
+- Consider using descriptive variable names to enhance code understanding, e.g., increment instead of handleUp.
+- The component could be made more reusable by accepting initial counter value as a prop.
+Correctness: 100%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-10/day-1/exercises/ex-xp-ts/src/UserCard.tsx
+suggestions for improvement:
+- The provided code does not use optional props. All props are required. The interface should declare optional properties using the `?` symbol.
+- The component should be tested with various prop combinations to ensure default values are used correctly when props are omitted.
+- Consider using more descriptive variable names if appropriate for better readability.
+Correctness: 0%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-10/day-1/exercises/ex-xp-ts/src/UserList.tsx
+suggestions for improvement:
+- Consider adding a more descriptive type name than `APIdata`. For example, `User` or `UserData` would be more explicit.
+- Consider implementing pagination for large datasets.
+Correctness: 100%
+-----
