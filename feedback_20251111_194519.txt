@@ -1,0 +1,29 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-10/day-2/daily-challenge/genric-data-fetch/src/api/apt.ts
+suggestions for improvement:
+- The provided code only implements the API function (`api.ts`).  It does not include the TypeScript types, Redux slice, DataFetcher component, or the App.tsx file. To be fully compliant with the problem description, you need to create these files and implement the required functionality.
+- Consider adding more robust error handling, such as checking the HTTP status codes of the API responses.
+- Add comments to explain the purpose of each section of the code, especially the try-catch blocks and the data transformation logic.
+Correctness: 20%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-10/day-2/daily-challenge/genric-data-fetch/src/components/DataFetcher.tsx
+suggestions for improvement:
+- The import path `../api/apt.ts` in `DataFetcher.tsx` should be checked for accuracy. It's expected to be `../api/api.ts` based on the instructions.
+- The type `API_ITEM` is used for mapping through `apiData`, but `apiData` is typed as `any`. Using a generic type for `DataFetcher` and typing `apiData` accordingly will improve type safety, as suggested by the problem description.
+- The component lacks explicit error handling in data fetching process other than displaying 'Opps....' message.  More sophisticated error handling (e.g., logging, retries) would improve robustness.
+- The code uses useSelector and useDispatch directly inside the component. While functional, consider using custom hooks to abstract Redux logic for improved separation of concerns and testability.
+Correctness: 60%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-10/day-2/daily-challenge/genric-data-fetch/src/features/dataSlice.ts
+suggestions for improvement:
+- Consider adding more specific error handling within the `rejected` case of `extraReducers`. Include the error message in the state, which would allow it to be displayed in the UI.
+- While the code uses `extraReducers` to handle the async thunk, consider including basic synchronous reducers if you need to directly manipulate the data state outside of API calls.  The instructions mention Redux for global state management generally.
+- The type definitions for `RootState` and `AppDispatch` are good practice, but ensure these are used consistently throughout the application where type information is needed.
+Correctness: 70%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-10/day-2/daily-challenge/genric-data-fetch/src/types/types.ts
+suggestions for improvement:
+- The provided code defines TypeScript interfaces, but it doesn't implement any of the React components (DataFetcher, App), Redux slices, or API fetching logic that are central to the challenge. Therefore, it only partially addresses the requirements.
+- The interfaces provided seem related to champion data, not generic data fetching as requested by the daily challenge. Consider creating more generic types that suit the task.
+- The task calls for specific file creations and implementations, but only type definitions are given.
+Correctness: 30%
+-----

@@ -1,0 +1,14 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-9/day-3/exercises/ex-xp/src/App.jsx
+suggestions for improvement:
+- The Redux store and slice logic should be defined in separate files, not directly imported from the component. The instruction specifies creating a Redux Toolkit slice and initializing the store.
+- The `TodoItem` component should be extracted to improve code organization and reusability as specified in the instructions.
+- The `addTodo` action should ideally handle the creation of a unique ID for each todo item within the reducer. This ensures that each todo is uniquely identified.
+- Consider adding input validation to the `AddTodo` component to prevent adding empty tasks.
+Correctness: 50%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-9/day-3/exercises/ex-xp/src/toolkit/toolkit.js
+suggestions for improvement:
+- Consider exporting the entire `tasksSlice.actions` object instead of individual actions for better organization.
+- While `findIndex` and `splice` are generally fine for small arrays, consider using more performant methods if the todo list grows very large.
+Correctness: 100%
+-----

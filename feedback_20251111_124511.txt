@@ -1,0 +1,8 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-10/day-2/exercises/recipe-book-ts/src/main.ts
+suggestions for improvement:
+- Consider using more descriptive variable names (e.g., instead of `titleINput`, use `recipeTitleInput`).
+- Look into creating a separate function to handle clearing the form inputs to improve readability and reduce code duplication.
+- It's good that event.preventDefault() is used to prevent the default form submission behavior, but you could further enhance the error handling (e.g., if the input fields are empty, provide visual feedback to the user).
+- The use of `any` type in the `addNewRecipeToList` function's event parameter should be avoided. Explicitly define the type of the event for better type safety.
+Correctness: 70%
+-----

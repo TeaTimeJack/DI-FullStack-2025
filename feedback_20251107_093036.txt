@@ -1,0 +1,16 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-9/day-3/daily-challenge/planner-app-toolkit/src/toolkit/toolkit.js
+suggestions for improvement:
+- Consider using a more descriptive name for the slice, such as 'dailyPlanner'.
+- While not explicitly stated, consider including error handling (e.g., validating date format) in the reducers.
+- For larger applications, consider normalizing the state (e.g., having a separate 'days' object to hold tasks by date) to improve performance and scalability.
+Correctness: 80%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-9/day-3/daily-challenge/planner-app-toolkit/src/App.jsx
+suggestions for improvement:
+- The application lacks the calendar/date picker component as described in Step 3. Currently, it's using a simple date input.
+- The filtering of tasks based on the selected day is not implemented. The application displays all tasks regardless of the day, failing to address Step 6.
+- The `editTheTask` function could be improved by using the current values of `name` and `date` as default values for `name2` and `date2`. Otherwise, it's not possible to edit the date/time without editing the name.
+- Consider adding input validation to prevent users from entering invalid task names or dates.
+- Add more styling to the component
+Correctness: 70%
+-----
