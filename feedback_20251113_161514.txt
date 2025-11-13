@@ -1,0 +1,8 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-10/day-2/daily-challenge/genric-data-fetch/src/DataFecherAll.tsx
+suggestions for improvement:
+- The code fulfills most of the requirements but lacks explicit TypeScript generics in the `DataFetcher` component as specified in the prompt. While types are used throughout the code, the component itself isn't explicitly generic.
+- Error handling could be improved by providing more specific error messages or implementing retry mechanisms for API calls.
+- Consider moving the API URL to a configuration file or environment variable for better maintainability.
+- The styling is minimal; consider adding more CSS for a better user experience as suggested in the optional enhancements.
+Correctness: 80%
+-----
