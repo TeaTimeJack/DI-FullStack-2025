@@ -1,0 +1,7 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-9/day-4/dailychallenge/age-tracker/src/App.jsx
+suggestions for improvement:
+- The `setTimeout` in `createAsyncThunk` should return a promise to properly handle asynchronous operations. Currently, it's just scheduling a timeout and not waiting for it to resolve before returning the thunk's value.
+- The logic within the `useEffect` hook can be simplified.  Instead of managing separate `buttonUpClicked` and `buttonDownClicked` state variables, you could directly dispatch the async thunks in the `handleClickUp` and `handleClickDown` functions.
+- Consider displaying a loading indicator in the UI based on the `status` in the store, as suggested in the instructions.
+Correctness: 60%
+-----

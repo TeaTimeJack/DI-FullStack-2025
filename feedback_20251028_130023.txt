@@ -1,0 +1,37 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-7/day-5/exercises/ex-xp/src/App.jsx
+suggestions for improvement:
+- The `Garage` component should receive the size 'small' as prop, not 'Big'.
+- The `Cars` component should receive the `carInfo` object. In this code, you pass `info`, you must fix that.
+- The code does not include the implementation of the components `Cars`, `Garage`, `Events`, and `Phone`.
+Correctness: 0%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-7/day-5/exercises/ex-xp/src/components/Cars.jsx
+suggestions for improvement:
+- The component's logic is flawed. The `if (color)` condition will always evaluate to true since `color` is a string and will never be null or undefined.  This means the second `return` statement will never be reached.
+- The Cars component directly receives props named `info`. You should directly destructure the props object like so: `const Cars = ({info}) => {`. This makes the code easier to read
+- There's an unused variable `carInfo` that should be removed to avoid confusion.
+Correctness: 60%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-7/day-5/exercises/ex-xp/src/components/Color.jsx
+suggestions for improvement:
+- The `useEffect` hook was not implemented.
+- The `useEffect` hook needs to alert 'useEffect reached' after the component is rendered.
+- The `changeColor` function does not need to check `if(favoriteColor !== "blue")`.
+Correctness: 75%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-7/day-5/exercises/ex-xp/src/components/Events.jsx
+suggestions for improvement:
+- Consider using a more descriptive name for the toggle function (e.g., `toggleIsToggleOn`) to improve readability.
+- The toggle logic can be simplified using the functional update form of `useState`: `setIsToggleOn(prev => prev === 'ON' ? 'OFF' : 'ON')`.
+Correctness: 100%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-7/day-5/exercises/ex-xp/src/components/Garage.jsx
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-7/day-5/exercises/ex-xp/src/components/Phone.jsx
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----

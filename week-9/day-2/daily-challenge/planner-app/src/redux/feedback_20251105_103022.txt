@@ -1,0 +1,7 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-9/day-2/daily-challenge/planner-app/src/App.jsx
+suggestions for improvement:
+- The provided code only sets up the Redux store provider and renders a `Tasks` component. It doesn't implement any of the core functionality described in the chapter content, such as date picking, task creation/editing/deletion, or display of tasks for a specific day.
+- The `Tasks` component is a placeholder and does not address the prompt. It needs to implement the UI elements to interact with Redux store to allow the user to perform CRUD operations on tasks for a specific date.
+- The Redux store, actions, and reducers for managing tasks are not implemented in the given code. Implement those to store data and update the store on user actions.
+Correctness: 0%
+-----

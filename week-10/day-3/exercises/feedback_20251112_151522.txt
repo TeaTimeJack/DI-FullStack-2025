@@ -1,0 +1,27 @@
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-10/day-3/exercises/app.js
+suggestions for improvement:
+- The code includes basic setup for an Express application and defines a protected route using the imported `authMiddleware`. However, it does not include the implementation for user registration, login, JWT generation, token refresh, or logout functionality as described in the chapter content. The authMiddleware implementation is missing, so the code cannot be fully evaluated.
+- To improve, implement the user registration and login endpoints with password hashing, JWT generation, and cookie management. Develop the token refresh endpoint and include error handling for invalid JWTs. Implement the /logout endpoint to clear cookies.
+- Add user registration and login routes including user data table and bcrypt.
+Correctness: 20%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-10/day-3/exercises/auth.js
+suggestions for improvement:
+- Implement JWT authentication middleware file to verify the JWT in incoming requests.
+- Consider implementing refresh tokens for improved user experience and security.
+- Replace the in-memory user storage with a persistent database.
+- Implement more robust error handling and input validation.
+Correctness: 85%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-10/day-3/exercises/authMiddleware.js
+suggestions for improvement:
+- Consider using environment variables to store the secret key instead of hardcoding it, even if it's in a separate file.
+- Add more detailed logging for JWT verification failures to aid debugging.
+Correctness: 100%
+-----
+URL: URL: https://github.com/TeaTimeJack/DI-FullStack-2025/blob/main/week-10/day-3/exercises/package.json
+suggestions for improvement:
+- The provided code only contains the package.json file, which lists dependencies. It does not implement any of the functionality described in the chapter content, such as setting up an Express application, creating authentication endpoints, generating JWTs, implementing middleware, or handling cookies.
+- The chapter outlines a step-by-step guide to implementing JWT authentication, and this file only declares the necessary modules and dependencies for the project.
+Correctness: 0%
+-----
