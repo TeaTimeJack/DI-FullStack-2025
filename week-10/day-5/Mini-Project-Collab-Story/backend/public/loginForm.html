@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIn Form</title>
+</head>
+<body>
+    <h1 >Log In:</h1>
+    <h4>Or <a href="./index.html">Register</a> if you Dont have an accunt.</h4>
+
+    <form onsubmit="loginUser(event)">
+       <label for="username"> UserName: </label>
+       <input name="username" placeholder="UserName">
+       <br>
+       <label for="password"> Password: </label>
+       <input type="password" name="password" placeholder="Password">
+       <br>
+       <br>
+       <input type="submit" value="LogIn">
+    </form>
+
+    <div id="responsDiv2"></div>
+    
+    <script>
+        function fetchUsers() {
+            fetch("http://localhost:5002/users") 
+            .then((res) => res.json())
+            .then((data) => {
+                // console.log(data);
+                // render(data);
+            });
+        };
+        function fetchPasswordUsers() {
+            fetch("http://localhost:5002/login") 
+            .then((res) => res.json())
+            .then((data) => {
+                // console.log(data);
+                // render(data);
+            });
+        };
+        // fetchPasswordUsers()
+        function loginUser(e) {
+            e.preventDefault();
+            const username = e.target.username.value;
+            const password = e.target.password.value;
+
+            fetch("http://localhost:5002/login",   { 
+                method: "POST",
+                headers: {
+                "Content-type": "application/json",
+                },
+                body: JSON.stringify({ username, password }),
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                        // console.log(data.message); 
+                    if (data.message === "This Username does not exist!") {
+                        document.getElementById("responsDiv2")
+                         .innerHTML = '<p style="color: red;">This Username does not exist!</p>';
+                    }else if (data.message === "Log in Successful!"){
+                         document.getElementById("responsDiv2")
+                         .innerHTML = `<p style="color: green;">${data.message}</p>
+                                        <h4>Hello ${data.userInfo.first_name} ${data.userInfo.last_name}!</h4>
+                                        <h5>Here is your Information:</h5> 
+                                        <ul>   
+                                            <li>UserName: ${data.userInfo.username}</li>
+                                            <li>Firtst Name: ${data.userInfo.first_name}</li>
+                                            <li>Last Name: ${data.userInfo.last_name}</li>
+                                            <li>Email: ${data.userInfo.email}</li>
+                                        </ul>`;   
+                    }else if (data.message === "Your password is incorrect - try again."){
+                         document.getElementById("responsDiv2")
+                         .innerHTML = '<p style="color: red;">Your password is incorrect - try again.</p>';
+                    }
+                    else{
+                        document.getElementById("responsDiv2")
+                         .innerHTML = '<p style="color: orange;">An unknown error occurred during registration.</p>';
+                    }
+                })
+                .catch((err) =>{
+                    console.log(err);
+                    document.getElementById("responsDiv2")
+                        .innerHTML = '<p style="color: red;">Could not connect to the server. Please try again later.</p>';
+                });
+            }
+    </script>
+</body>
+</html>

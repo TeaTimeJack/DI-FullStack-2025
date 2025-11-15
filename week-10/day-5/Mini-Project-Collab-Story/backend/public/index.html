@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+</head>
+<body>
+    <h1 >Register:</h1>
+    <h4>Or <a href="./loginForm.html">LOGIN</a> if you already have an accunt.</h4>
+
+    <form onsubmit="registerUser(event)">
+       <label for="firstName"> First Name: </label>
+       <input name="firstName" placeholder="First Name">
+       <br>
+       <label for="lastName"> Last Name: </label>
+       <input name="lastName" placeholder="Last Name">
+       <br>
+       <label for="email"> Email: </label>
+       <input type="email" name="email" placeholder="Email">
+       <br>
+       <label for="username"> UserName: </label>
+       <input name="username" placeholder="UserName">
+       <br>
+       <label for="password"> Password: </label>
+       <input type="password" name="password" placeholder="Password">
+       <br>
+       <br>
+       <input type="submit" value="Register">
+    </form>
+
+    <div id="responsDiv"></div>
+
+    <script>
+        function fetchUsers() {
+            fetch("http://localhost:5002/users") 
+            .then((res) => res.json())
+            .then((data) => {
+                // console.log(data);
+            });
+        };
+        // fetchUsers();
+        
+        function registerUser(e) {
+            e.preventDefault();
+            const first_name = e.target.firstName.value;
+            const last_name = e.target.lastName.value;
+            const email = e.target.email.value;
+            const username = e.target.username.value;
+            const password = e.target.password.value;
+
+            fetch("http://localhost:5002/register",   { 
+                method: "POST",
+                headers: {
+                "Content-type": "application/json",
+                },
+                body: JSON.stringify({ first_name, last_name, email, username, password }),
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                        // console.log(data); 
+                        const responseDiv = document.getElementById("responsDiv");
+                    if (data.message === "Registration Complete!") {
+                         responseDiv.innerHTML = '<p style="color: green;">Registration Complete!</p>';
+                    }else if (data.message === "This username already exists"){
+                         responseDiv.innerHTML = '<p style="color: red;">This user already exists. Please choose a different username.</p>';
+                    }else{
+                        responseDiv.innerHTML = '<p style="color: orange;">An unknown error occurred during registration.</p>';
+                    }
+                    // fetchUsers();
+                })
+                .catch((err) =>{
+                    console.error("Fetch/Server Error:", err);
+                    
+                    const displayMessage = err.message.includes("Could not connect") 
+                        ? "Could not connect to the server. Please try again later."
+                        : `An error occurred: ${err.message}`;
+
+                    document.getElementById("responsDiv")
+                    .innerHTML = `<p style="color: red;">${displayMessage}</p>`;
+                });
+            }
+
+    </script>
+</body>
+</html>
